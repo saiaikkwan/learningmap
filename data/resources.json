@@ -1,0 +1,250 @@
+{
+  "webDevelopment": {
+    "frontend": [
+      {
+        "name": "freeCodeCamp",
+        "type": "Platform",
+        "url": "https://www.freecodecamp.org",
+        "cost": "Free",
+        "level": "Beginner",
+        "rating": 5,
+        "timeEstimate": "300+ hours",
+        "note": "The gold standard for free web dev education. Project-based approach means you actually build things. I completed the Responsive Web Design and JavaScript modules.",
+        "topics": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+        "status": "completed"
+      },
+      {
+        "name": "The Odin Project",
+        "type": "Curriculum",
+        "url": "https://www.theodinproject.com",
+        "cost": "Free",
+        "level": "Beginner to Intermediate",
+        "rating": 5,
+        "timeEstimate": "6-12 months",
+        "note": "More rigorous than freeCodeCamp. Forces you to set up a real dev environment. The Ruby on Rails path is excellent.",
+        "topics": ["HTML", "CSS", "JavaScript", "Node.js", "Ruby"],
+        "status": "in-progress"
+      },
+      {
+        "name": "Frontend Mentor",
+        "type": "Practice",
+        "url": "https://www.frontendmentor.io",
+        "cost": "Freemium",
+        "level": "Intermediate",
+        "rating": 4,
+        "timeEstimate": "2-6 hours per challenge",
+        "note": "Real-world design challenges. Best way to practice after learning basics. Premium challenges give you Figma files.",
+        "topics": ["HTML", "CSS", "JavaScript"],
+        "status": "in-progress"
+      },
+      {
+        "name": "MDN Web Docs",
+        "type": "Documentation",
+        "url": "https://developer.mozilla.org",
+        "cost": "Free",
+        "level": "All Levels",
+        "rating": 5,
+        "timeEstimate": "Ongoing reference",
+        "note": "The most reliable web documentation. Use this over W3Schools. Excellent tutorials for beginners too.",
+        "topics": ["HTML", "CSS", "JavaScript", "Web APIs"],
+        "status": "in-progress"
+      },
+      {
+        "name": "JavaScript.info",
+        "type": "Tutorial",
+        "url": "https://javascript.info",
+        "cost": "Free",
+        "level": "Beginner to Advanced",
+        "rating": 5,
+        "timeEstimate": "40-60 hours",
+        "note": "The best free JavaScript resource. Goes from basics to advanced concepts like closures, prototypes, and async programming.",
+        "topics": ["JavaScript", "ES6+"],
+        "status": "in-progress"
+      }
+    ],
+    "backend": [
+      {
+        "name": "Node.js Official Docs",
+        "type": "Documentation",
+        "url": "https://nodejs.org/docs",
+        "cost": "Free",
+        "level": "Intermediate",
+        "rating": 4,
+        "timeEstimate": "Ongoing reference",
+        "note": "Surprisingly good for learning. The guides section walks through core concepts clearly.",
+        "topics": ["Node.js", "Backend"],
+        "status": "in-progress"
+      },
+      {
+        "name": "Full Stack Open",
+        "type": "University Course",
+        "url": "https://fullstackopen.com",
+        "cost": "Free",
+        "level": "Intermediate",
+        "rating": 5,
+        "timeEstimate": "3-4 months",
+        "note": "University of Helsinki's course. Modern React + Node.js. Hard but worth it.",
+        "topics": ["React", "Node.js", "MongoDB", "GraphQL", "TypeScript"],
+        "status": "planned"
+      }
+    ]
+  },
+  "cybersecurity": {
+    "fundamentals": [
+      {
+        "name": "Cybersecurity Essentials (Cisco)",
+        "type": "Course",
+        "url": "https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials",
+        "cost": "Free",
+        "level": "Beginner",
+        "rating": 4,
+        "timeEstimate": "30 hours",
+        "note": "Solid introduction covering the basics: CIA triad, threat actors, cryptography basics, and network security fundamentals.",
+        "topics": ["CIA Triad", "Threats", "Cryptography", "Network Security"],
+        "status": "completed"
+      },
+      {
+        "name": "Professor Messer Security+",
+        "type": "Video Course",
+        "url": "https://www.professormesser.com/security-plus/sy0-601/",
+        "cost": "Free",
+        "level": "Beginner to Intermediate",
+        "rating": 5,
+        "timeEstimate": "20-30 hours",
+        "note": "Best free Security+ prep. Clear explanations, no fluff. Even if you don't take the cert, the knowledge is valuable.",
+        "topics": ["Security+", "CompTIA", "Fundamentals"],
+        "status": "in-progress"
+      }
+    ]
+  },
+  "ethicalHacking": {
+    "platforms": [
+      {
+        "name": "TryHackMe",
+        "type": "Platform",
+        "url": "https://tryhackme.com",
+        "cost": "Freemium ($10/month)",
+        "level": "Beginner to Intermediate",
+        "rating": 5,
+        "timeEstimate": "Varies by room",
+        "note": "Best starting point for ethical hacking. Guided rooms with hints, no setup required. Pre-Security path is perfect for absolute beginners.",
+        "topics": ["Linux", "Networking", "Web Hacking", "Privilege Escalation"],
+        "status": "in-progress"
+      },
+      {
+        "name": "HackTheBox",
+        "type": "Platform",
+        "url": "https://www.hackthebox.com",
+        "cost": "Freemium ($14/month)",
+        "level": "Intermediate to Advanced",
+        "rating": 4,
+        "timeEstimate": "Hours per machine",
+        "note": "More challenging than TryHackMe. No hand-holding. Requires VPN setup. Academy section has structured learning paths.",
+        "topics": ["Penetration Testing", "Active Directory", "Web Apps"],
+        "status": "planned"
+      },
+      {
+        "name": "PortSwigger Web Security Academy",
+        "type": "Platform",
+        "url": "https://portswigger.net/web-security",
+        "cost": "Free",
+        "level": "Intermediate",
+        "rating": 5,
+        "timeEstimate": "40-60 hours",
+        "note": "Free, comprehensive web app security training from the makers of Burp Suite. Covers all OWASP Top 10 vulnerabilities.",
+        "topics": ["SQL Injection", "XSS", "CSRF", "Authentication"],
+        "status": "planned"
+      }
+    ],
+    "networking": {
+    "fundamentals": [
+      {
+        "name": "Professor Messer Network+",
+        "type": "Video Course",
+        "url": "https://www.professormesser.com/network-plus/n10-008/",
+        "cost": "Free",
+        "level": "Beginner",
+        "rating": 5,
+        "timeEstimate": "20-30 hours",
+        "note": "The best free Network+ prep. Clear, concise, no fluff. Even if you don't take the cert, the knowledge is essential for everything else.",
+        "topics": ["OSI Model", "TCP/IP", "Subnetting", "Protocols", "Network+"],
+        "status": "in-progress"
+      },
+      {
+        "name": "Practical Networking (YouTube)",
+        "type": "Video Series",
+        "url": "https://www.youtube.com/@PracticalNetworking",
+        "cost": "Free",
+        "level": "Beginner to Intermediate",
+        "rating": 5,
+        "timeEstimate": "10-15 hours",
+        "note": "The subnetting mastery series alone is worth it. Best subnetting explanations on the internet. Also covers TCP/IP, NAT, and more.",
+        "topics": ["Subnetting", "TCP/IP", "NAT", "Routing"],
+        "status": "completed"
+      },
+      {
+        "name": "Computer Networking Course (freeCodeCamp)",
+        "type": "Video Course",
+        "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
+        "cost": "Free",
+        "level": "Beginner",
+        "rating": 4,
+        "timeEstimate": "9 hours",
+        "note": "Comprehensive single-video course covering everything from basic terminology to advanced concepts. Good overview before diving deeper.",
+        "topics": ["OSI Model", "TCP/IP", "DNS", "HTTP", "Networking Basics"],
+        "status": "planned"
+      }
+    ],
+    "cisco": [
+      {
+        "name": "Jeremy's IT Lab (CCNA)",
+        "type": "Video Course",
+        "url": "https://www.youtube.com/@JeremysITLab",
+        "cost": "Free",
+        "level": "Beginner to Intermediate",
+        "rating": 5,
+        "timeEstimate": "60-80 hours",
+        "note": "The best free CCNA course on YouTube. Complete playlist covering every CCNA topic with labs and Anki flashcards. Better than most paid courses.",
+        "topics": ["CCNA", "Cisco IOS", "Routing", "Switching", "Subnetting"],
+        "status": "in-progress"
+      },
+      {
+        "name": "Cisco Packet Tracer",
+        "type": "Tool",
+        "url": "https://www.netacad.com/courses/packet-tracer",
+        "cost": "Free",
+        "level": "All Levels",
+        "rating": 5,
+        "timeEstimate": "Ongoing practice",
+        "note": "Free network simulation tool from Cisco. Build, configure, and troubleshoot virtual networks. Essential for CCNA prep. No physical hardware needed.",
+        "topics": ["Simulation", "Cisco IOS", "Lab Practice", "CCNA"],
+        "status": "in-progress"
+      },
+      {
+        "name": "Cisco NetAcad",
+        "type": "Official Curriculum",
+        "url": "https://www.netacad.com/",
+        "cost": "Varies (often free through partners)",
+        "level": "Beginner to Advanced",
+        "rating": 4,
+        "timeEstimate": "70 hours per course",
+        "note": "Cisco's official learning platform. Structured courses with assessments. The CCNA course includes Packet Tracer activities and final exams.",
+        "topics": ["CCNA", "CCNP", "Cybersecurity", "IoT"],
+        "status": "planned"
+      },
+      {
+        "name": "Boson ExSim for CCNA",
+        "type": "Practice Exams",
+        "url": "https://www.boson.com/practice-exam/cisco-200-301-ccna-practice-exam",
+        "cost": "Paid (~$99)",
+        "level": "Intermediate",
+        "rating": 5,
+        "timeEstimate": "15-20 hours",
+        "note": "The gold standard for CCNA practice exams. Harder than the real exam. If you pass Boson, you'll pass CCNA. Detailed explanations for every question.",
+        "topics": ["CCNA", "Exam Prep", "Practice Tests"],
+        "status": "planned"
+      }
+    ]
+  }
+  }
+}

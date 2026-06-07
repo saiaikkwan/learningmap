@@ -1,0 +1,156 @@
+{
+  "web-development": {
+    "questions": [
+      {
+        "question": "What does HTML stand for?",
+        "options": ["HyperText Markup Language", "High Tech Modern Language", "HyperText Modern Links", "Home Tool Markup Language"],
+        "correct": 0,
+        "explanation": "HTML (HyperText Markup Language) is the standard markup language for creating web pages."
+      },
+      {
+        "question": "Which CSS property changes the background color?",
+        "options": ["color", "bgcolor", "background-color", "background"],
+        "correct": 2,
+        "explanation": "The 'background-color' property sets the background color of an element."
+      },
+      {
+        "question": "How do you declare a JavaScript variable?",
+        "options": ["variable name = value;", "var name = value;", "v name = value;", "let: name = value;"],
+        "correct": 1,
+        "explanation": "Use 'var', 'let', or 'const' to declare variables in JavaScript."
+      },
+      {
+        "question": "What does API stand for?",
+        "options": ["Application Programming Interface", "Applied Programming Integration", "Automated Program Interface", "Application Process Integration"],
+        "correct": 0,
+        "explanation": "An API allows different software applications to communicate with each other."
+      },
+      {
+        "question": "Which HTTP method submits data to a server?",
+        "options": ["GET", "POST", "PUT", "FETCH"],
+        "correct": 1,
+        "explanation": "POST is used to submit data to be processed to a specified resource."
+      }
+    ]
+  },
+  "cybersecurity": {
+    "questions": [
+      {
+        "question": "What does the 'C' in CIA Triad stand for?",
+        "options": ["Confidentiality", "Control", "Computing", "Communication"],
+        "correct": 0,
+        "explanation": "The CIA Triad consists of Confidentiality, Integrity, and Availability."
+      },
+      {
+        "question": "What is phishing?",
+        "options": ["A type of encryption", "A social engineering attack using deceptive emails", "A firewall configuration", "A programming language"],
+        "correct": 1,
+        "explanation": "Phishing uses deceptive messages to trick victims into revealing sensitive information."
+      },
+      {
+        "question": "What does HTTPS protect against?",
+        "options": ["All types of malware", "Man-in-the-middle attacks during transmission", "Physical theft", "Password guessing"],
+        "correct": 1,
+        "explanation": "HTTPS encrypts data in transit, protecting against eavesdropping and MITM attacks."
+      },
+      {
+        "question": "What is 2FA?",
+        "options": ["Two Firewall Authentication", "Two-Factor Authentication", "Dual File Access", "Second Factor Application"],
+        "correct": 1,
+        "explanation": "Two-Factor Authentication adds a second layer of security beyond just a password."
+      },
+      {
+        "question": "What is ransomware?",
+        "options": ["Free antivirus", "Malware that encrypts files and demands payment", "A firewall type", "A password manager"],
+        "correct": 1,
+        "explanation": "Ransomware encrypts files and demands payment (usually cryptocurrency) for the decryption key."
+      }
+    ]
+  },
+  "ethical-hacking": {
+    "questions": [
+      {
+        "question": "What is the first phase of ethical hacking?",
+        "options": ["Exploitation", "Reconnaissance", "Covering tracks", "Gaining access"],
+        "correct": 1,
+        "explanation": "Reconnaissance (information gathering) is the first phase of ethical hacking."
+      },
+      {
+        "question": "What is a penetration test?",
+        "options": ["A speed test", "An authorized simulated cyber attack", "A password check", "A virus scan"],
+        "correct": 1,
+        "explanation": "A penetration test is an authorized simulated attack to evaluate security."
+      },
+      {
+        "question": "Which tool is used for network scanning?",
+        "options": ["Photoshop", "Nmap", "Excel", "Chrome"],
+        "correct": 1,
+        "explanation": "Nmap (Network Mapper) is widely used for network discovery and security auditing."
+      },
+      {
+        "question": "What is a zero-day vulnerability?",
+        "options": ["A bug known for years", "A vulnerability unknown to the vendor", "A vulnerability only at midnight", "A free tool"],
+        "correct": 1,
+        "explanation": "A zero-day is unknown to the vendor and has no patch available."
+      },
+      {
+        "question": "What does SQL injection target?",
+        "options": ["RAM", "The database layer", "Graphics card", "Operating system"],
+        "correct": 1,
+        "explanation": "SQL injection attacks target the database layer by injecting malicious SQL code."
+      }
+    ],
+    "networking": {
+    "questions": [
+      {
+        "question": "How many layers are in the OSI model?",
+        "options": ["5", "4", "7", "6"],
+        "correct": 2,
+        "explanation": "The OSI model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application."
+      },
+      {
+        "question": "What port does HTTPS use by default?",
+        "options": ["80", "443", "22", "8080"],
+        "correct": 1,
+        "explanation": "HTTPS uses port 443. HTTP uses port 80. SSH uses port 22."
+      },
+      {
+        "question": "Which Cisco IOS command shows the current running configuration?",
+        "options": ["show startup-config", "show running-config", "show config", "display config"],
+        "correct": 1,
+        "explanation": "'show running-config' displays the current active configuration in RAM. 'show startup-config' shows the saved configuration in NVRAM."
+      },
+      {
+        "question": "What is a subnet mask of 255.255.255.0 in CIDR notation?",
+        "options": ["/8", "/16", "/24", "/32"],
+        "correct": 2,
+        "explanation": "255.255.255.0 = /24 because 24 bits are used for the network portion (8+8+8)."
+      },
+      {
+        "question": "What protocol is used to dynamically assign IP addresses?",
+        "options": ["DNS", "DHCP", "ARP", "ICMP"],
+        "correct": 1,
+        "explanation": "DHCP (Dynamic Host Configuration Protocol) automatically assigns IP addresses to devices on a network."
+      },
+      {
+        "question": "Which layer of the OSI model does a router operate at?",
+        "options": ["Layer 1 (Physical)", "Layer 2 (Data Link)", "Layer 3 (Network)", "Layer 4 (Transport)"],
+        "correct": 2,
+        "explanation": "Routers operate at Layer 3 (Network layer). They forward packets based on IP addresses."
+      },
+      {
+        "question": "What does VLAN stand for?",
+        "options": ["Virtual Local Area Network", "Variable Link Access Node", "Virtual Link Authentication Network", "Very Large Area Network"],
+        "correct": 0,
+        "explanation": "VLAN (Virtual Local Area Network) logically segments a physical network into separate broadcast domains."
+      },
+      {
+        "question": "Which Cisco IOS mode allows you to make configuration changes?",
+        "options": ["User EXEC mode", "Privileged EXEC mode", "Global Configuration mode", "ROM Monitor mode"],
+        "correct": 2,
+        "explanation": "Global Configuration mode (entered with 'configure terminal') allows configuration changes. User EXEC is read-only."
+      }
+    ]
+  }
+  }
+}

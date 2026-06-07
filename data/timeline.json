@@ -1,0 +1,54 @@
+{
+  "journey": [
+    {
+      "date": "Early 2023",
+      "title": "Started Web Development",
+      "description": "Began with HTML and CSS basics. Built my first static websites and learned responsive design principles.",
+      "skills": ["HTML5", "CSS3", "Responsive Design"],
+      "resources": ["freeCodeCamp", "MDN Web Docs"]
+    },
+    {
+      "date": "Mid 2023",
+      "title": "JavaScript Fundamentals",
+      "description": "Learned core JavaScript: DOM manipulation, events, async programming, and ES6+ features.",
+      "skills": ["JavaScript", "ES6+", "DOM"],
+      "resources": ["JavaScript.info", "Eloquent JavaScript"]
+    },
+    {
+      "date": "Late 2023",
+      "title": "First Portfolio Site",
+      "description": "Built my portfolio website with multiple projects. Focused on clean design and user experience.",
+      "skills": ["UI/UX Design", "Multi-page Sites", "Git"],
+      "resources": ["Frontend Mentor"]
+    },
+    {
+      "date": "Late 2023",
+      "title": "Discovered Cybersecurity",
+      "description": "Started exploring cybersecurity fundamentals. Completed Cisco's Cybersecurity Essentials course.",
+      "skills": ["CIA Triad", "Threat Analysis", "Security Basics"],
+      "resources": ["Cisco NetAcad"]
+    },
+    {
+      "date": "Early 2024",
+      "title": "Ethical Hacking Begins",
+      "description": "Started TryHackMe. Completed Pre-Security path and began learning Linux and networking.",
+      "skills": ["Linux", "Networking", "Basic Enumeration"],
+      "resources": ["TryHackMe"]
+    },
+    {
+      "date": "Mid 2024",
+      "title": "Web Application Security",
+      "description": "Connecting web dev with security. Learning OWASP Top 10 and building secure applications.",
+      "skills": ["OWASP", "XSS", "SQL Injection", "Secure Coding"],
+      "resources": ["OWASP", "PortSwigger Web Security Academy"]
+    },
+    {
+    "date": "Mid 2024",
+    "title": "Started Networking & Cisco",
+    "description": "Began studying networking fundamentals and CCNA. Learning OSI model, subnetting, and Cisco IOS through Jeremy's IT Lab and Packet Tracer.",
+    "skills": ["OSI Model", "TCP/IP", "Subnetting", "Cisco IOS", "Packet Tracer"],
+    "resources": ["Jeremy's IT Lab", "Professor Messer", "Packet Tracer"]
+    }
+  ]
+  
+}
