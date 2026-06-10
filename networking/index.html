@@ -3,37 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Networking - Learning Map</title>
+    <title>Networking &mdash; Learning Map</title>
     <meta name="description" content="Curated networking resources: CCNA, Cisco, TCP/IP, subnetting, and network fundamentals with honest reviews.">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="progress-bar-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 1001; background: transparent;">
-        <div id="reading-progress" class="progress-bar-fill" style="width: 0%; height: 100%; border-radius: 0;"></div>
-    </div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo"><i class="fas fa-shield-alt"></i><span>Learning Map</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Web Dev <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../web-development/">Overview</a></li><li><a href="../web-development/frontend.html">Frontend</a></li><li><a href="../web-development/backend.html">Backend</a></li><li><a href="../web-development/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../cybersecurity/">Overview</a></li><li><a href="../cybersecurity/fundamentals.html">Fundamentals</a></li><li><a href="../cybersecurity/network-security.html">Network Security</a></li><li><a href="../cybersecurity/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle active">Networking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="index.html">Overview</a></li><li><a href="fundamentals.html">Fundamentals</a></li><li><a href="cisco.html">Cisco Track</a></li><li><a href="quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Ethical Hacking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../ethical-hacking/">Overview</a></li><li><a href="../ethical-hacking/platforms.html">Platforms</a></li><li><a href="../ethical-hacking/tools.html">Tools</a></li><li><a href="../ethical-hacking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../resources/">All Resources</a></li><li><a href="../resources/comparison.html">Comparison</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Tools <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../tools/password-checker.html">Password Checker</a></li><li><a href="../tools/cipher-lab.html">Cipher Lab</a></li><li><a href="../tools/phishing-quiz.html">Phishing Quiz</a></li></ul></li>
-                <li><a href="../my-journey.html">My Journey</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon" id="theme-icon"></i></button>
-            <button class="hamburger"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
+    <!-- Header loads automatically via loader.js -->
 
     <div class="page-with-sidebar" style="padding-top: 80px;">
         <aside class="sidebar">
-            <p class="sidebar-title"><i class="fas fa-network-wired"></i> Networking</p>
+            <p class="sidebar-title">
+                <i class="fas fa-network-wired"></i> Networking
+            </p>
             <ul class="sidebar-menu">
                 <li><a href="index.html" class="active">Overview</a></li>
                 <li><a href="fundamentals.html">Fundamentals</a></li>
@@ -41,31 +23,36 @@
                 <li><a href="quiz.html">Take Quiz</a></li>
             </ul>
         </aside>
+
         <main class="content-area">
             <header class="hero">
-                <h1><i class="fas fa-network-wired"></i> <span class="highlight">Networking</span></h1>
+                <h1>
+                    <i class="fas fa-network-wired"></i> <span class="highlight">Networking</span>
+                </h1>
                 <p>The backbone of everything digital. From packets to protocols.</p>
             </header>
+
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
                     <h3>Fundamentals</h3>
-                    <p>OSI model, TCP/IP, subnetting, routing, switching — the core concepts that make the internet work.</p>
-                    <a href="fundamentals.html" class="btn btn-outline btn-sm">Learn More →</a>
+                    <p>OSI model, TCP/IP, subnetting, routing, switching &mdash; the core concepts that make the internet work.</p>
+                    <a href="fundamentals.html" class="btn btn-outline btn-sm">Learn More &rarr;</a>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-cube"></i></div>
                     <h3>Cisco Track</h3>
                     <p>CCNA-focused resources. Cisco IOS, Packet Tracer labs, and vendor-specific knowledge.</p>
-                    <a href="cisco.html" class="btn btn-outline btn-sm">Explore Cisco →</a>
+                    <a href="cisco.html" class="btn btn-outline btn-sm">Explore Cisco &rarr;</a>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
                     <h3>Test Your Knowledge</h3>
                     <p>Quiz yourself on networking fundamentals and Cisco concepts.</p>
-                    <a href="quiz.html" class="btn btn-primary btn-sm">Take Quiz →</a>
+                    <a href="quiz.html" class="btn btn-primary btn-sm">Take Quiz &rarr;</a>
                 </div>
             </div>
+
             <div class="resource-card mt-2">
                 <h3>Why Networking Matters</h3>
                 <div class="resource-note">
@@ -77,14 +64,10 @@
         </main>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section"><h4>Learning Map</h4><p>Part of <a href="/">saiaikkwan.com</a></p></div>
-            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="fundamentals.html">Fundamentals</a></li><li><a href="cisco.html">Cisco Track</a></li><li><a href="quiz.html">Networking Quiz</a></li></ul></div>
-        </div>
-        <div class="footer-bottom"><p>Curated with honest opinions. Not sponsored. © 2024</p></div>
-    </footer>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
+    <script src="../js/loader.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

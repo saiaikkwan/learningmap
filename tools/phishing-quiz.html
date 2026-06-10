@@ -3,74 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phishing Quiz - Learning Map</title>
+    <title>Phishing Quiz &mdash; Learning Map</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo"><i class="fas fa-shield-alt"></i><span>Learning Map</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Web Dev <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../web-development/">Overview</a></li><li><a href="../web-development/frontend.html">Frontend</a></li><li><a href="../web-development/backend.html">Backend</a></li><li><a href="../web-development/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../cybersecurity/">Overview</a></li><li><a href="../cybersecurity/fundamentals.html">Fundamentals</a></li><li><a href="../cybersecurity/network-security.html">Network Security</a></li><li><a href="../cybersecurity/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Networking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../networking/">Overview</a></li><li><a href="../networking/fundamentals.html">Fundamentals</a></li><li><a href="../networking/cisco.html">Cisco Track</a></li><li><a href="../networking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Ethical Hacking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../ethical-hacking/">Overview</a></li><li><a href="../ethical-hacking/platforms.html">Platforms</a></li><li><a href="../ethical-hacking/tools.html">Tools</a></li><li><a href="../ethical-hacking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../resources/">All Resources</a></li><li><a href="../resources/comparison.html">Comparison</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle active">Tools <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="password-checker.html">Password Checker</a></li><li><a href="cipher-lab.html">Cipher Lab</a></li><li><a href="phishing-quiz.html">Phishing Quiz</a></li></ul></li>
-                <li><a href="../my-journey.html">My Journey</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon" id="theme-icon"></i></button>
-            <button class="hamburger"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
+    <!-- Header loads automatically via loader.js -->
 
     <header class="hero">
-        <h1><i class="fas fa-envelope"></i> Phishing <span class="highlight">Email Quiz</span></h1>
-        <p>Can you tell legitimate from phishing emails?</p>
+        <h1>
+            <i class="fas fa-envelope"></i> Phishing <span class="highlight">Email Quiz</span>
+        </h1>
+        <p>Can you tell the difference between legitimate and phishing emails?</p>
     </header>
 
     <section class="container">
-        <div class="tool-container" style="max-width:650px;">
+        <div class="tool-container" style="max-width: 650px;">
             <div id="phishing-quiz-container">
                 <div class="email-preview">
-                    <div class="email-header"><div class="email-subject" id="email-subject"></div><div class="email-from" id="email-from"></div></div>
+                    <div class="email-header">
+                        <div class="email-subject" id="email-subject"></div>
+                        <div class="email-from" id="email-from"></div>
+                    </div>
                     <div class="email-body" id="email-body"></div>
                 </div>
-                <div style="display:flex;gap:1rem;margin-top:1.5rem;justify-content:center;">
-                    <button id="legit-btn" class="btn btn-outline" style="border-color:var(--success);color:var(--success);"><i class="fas fa-check"></i> Legitimate</button>
-                    <button id="phish-btn" class="btn btn-outline" style="border-color:var(--danger);color:var(--danger);"><i class="fas fa-exclamation-triangle"></i> Phishing</button>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center;">
+                    <button id="legit-btn" class="btn btn-outline" style="border-color: var(--success); color: var(--success);">
+                        <i class="fas fa-check"></i> Legitimate
+                    </button>
+                    <button id="phish-btn" class="btn btn-outline" style="border-color: var(--danger); color: var(--danger);">
+                        <i class="fas fa-exclamation-triangle"></i> Phishing
+                    </button>
                 </div>
-                <p id="phish-feedback" style="text-align:center;margin-top:1rem;font-weight:600;"></p>
-                <div class="text-center mt-2"><button id="next-email-btn" class="btn btn-primary hidden">Next Email →</button></div>
-                <p style="text-align:center;margin-top:1rem;color:var(--text-light);">Score: <span id="phish-score">0</span> / <span id="phish-total">0</span></p>
+
+                <p id="phish-feedback" style="text-align: center; margin-top: 1rem; font-weight: 600;"></p>
+
+                <div class="text-center mt-2">
+                    <button id="next-email-btn" class="btn btn-primary hidden">Next Email &rarr;</button>
+                </div>
+
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-light);">
+                    Score: <span id="phish-score">0</span> / <span id="phish-total">0</span>
+                </p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content"><div class="footer-section"><h4>Learning Map</h4><p>Part of <a href="/">saiaikkwan.com</a></p></div></div>
-        <div class="footer-bottom"><p>For educational purposes. © 2024</p></div>
-    </footer>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
+    <script src="../js/loader.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        const emails = [
-            { subject: 'Your account has been compromised', from: 'security@paypa1.com', body: '<p>Dear Customer,</p><p>We have detected unusual activity. <a href="#" class="email-link">Click here to verify</a> immediately or your account will be suspended.</p>', isPhishing: true, explanation: 'Domain "paypa1.com" uses number 1 instead of L. Legitimate companies never threaten immediate suspension.' },
-            { subject: 'Your monthly statement is ready', from: 'noreply@chase.com', body: '<p>Hi,</p><p>Your statement for March 2024 is available. View it by logging into the Chase app or at chase.com.</p>', isPhishing: false, explanation: 'No direct links, no urgency, directs to official app or typing the URL yourself.' },
-            { subject: 'You won a free iPhone 15!', from: 'prizes@winning-notifications.xyz', body: '<p>CONGRATULATIONS!</p><p>Claim your iPhone 15 by <a href="#" class="email-link">clicking here</a>. Hurry! Offer expires in 2 hours!</p>', isPhishing: true, explanation: 'Too good to be true. .xyz domain, extreme urgency, request for personal info.' },
-            { subject: 'Your Google sign-in alert', from: 'no-reply@accounts.google.com', body: '<p>Your Google Account was signed in to from a new Windows device. If this was you, ignore. If not, <a href="#" class="email-link">review account activity</a>.</p>', isPhishing: false, explanation: 'Typical legitimate security alert. Informs without panicking. Correct google.com domain.' }
-        ];
-        let cur = 0, score = 0, answered = false;
-        const subEl = document.getElementById('email-subject'), fromEl = document.getElementById('email-from'), bodyEl = document.getElementById('email-body'), fbEl = document.getElementById('phish-feedback'), scoreEl = document.getElementById('phish-score'), totalEl = document.getElementById('phish-total'), nextBtn = document.getElementById('next-email-btn'), legitBtn = document.getElementById('legit-btn'), phishBtn = document.getElementById('phish-btn');
-        function load() {
-            if (cur >= emails.length) { document.getElementById('phishing-quiz-container').innerHTML = `<div class="quiz-score"><div style="font-size:4rem;">${score===emails.length?'🏆':score>=emails.length/2?'👍':'📚'}</div><h3>${score}/${emails.length} Correct</h3><button class="btn btn-primary mt-2" onclick="location.reload()">Try Again</button></div>`; return; }
-            const e = emails[cur]; subEl.textContent = e.subject; fromEl.textContent = 'From: ' + e.from; bodyEl.innerHTML = e.body; fbEl.textContent = ''; nextBtn.classList.add('hidden'); legitBtn.disabled = phishBtn.disabled = false; answered = false; totalEl.textContent = cur;
-        }
-        function answer(g) { if (answered) return; answered = true; const e = emails[cur]; const ok = e.isPhishing === g; if (ok) score++; scoreEl.textContent = score; fbEl.textContent = (ok ? '✅ ' : '❌ ') + e.explanation; fbEl.style.color = ok ? 'var(--success)' : 'var(--danger)'; legitBtn.disabled = phishBtn.disabled = true; nextBtn.classList.remove('hidden'); }
-        legitBtn.addEventListener('click', () => answer(false)); phishBtn.addEventListener('click', () => answer(true)); nextBtn.addEventListener('click', () => { cur++; load(); });
-        load();
+        (function () {
+            'use strict';
+
+            var emails = [
+                {
+                    subject: 'Your account has been compromised',
+                    from: 'security@paypa1.com',
+                    body: '<p>Dear Customer,</p><p>We have detected unusual activity on your account. Please <a href="#" class="email-link">click here to verify your identity</a> immediately or your account will be suspended within 24 hours.</p><p>Regards,<br>PayPal Security Team</p>',
+                    isPhishing: true,
+                    explanation: 'The domain "paypa1.com" uses a number 1 instead of the letter L. Legitimate companies never threaten immediate suspension. Always check the full sender email address.'
+                },
+                {
+                    subject: 'Your monthly statement is ready',
+                    from: 'noreply@chase.com',
+                    body: '<p>Hi,</p><p>Your monthly account statement for March 2026 is now available. You can view it by logging into your account through the Chase mobile app or at chase.com.</p><p>Thank you,<br>Chase Customer Service</p>',
+                    isPhishing: false,
+                    explanation: 'This is legitimate. The email doesn\'t include direct links, doesn\'t create urgency, and directs you to use the official app or type the URL yourself.'
+                },
+                {
+                    subject: 'You won a free iPhone 16!',
+                    from: 'prizes@winning-notifications.xyz',
+                    body: '<p>CONGRATULATIONS!</p><p>You have been selected as the winner of our daily draw! Claim your brand new iPhone 16 by <a href="#" class="email-link">clicking here</a> and entering your shipping details.</p><p>Hurry! Offer expires in 2 hours!</p>',
+                    isPhishing: true,
+                    explanation: 'Too good to be true = phishing. The .xyz domain, extreme urgency, and request for personal information are all red flags.'
+                },
+                {
+                    subject: 'Your sign-in alert',
+                    from: 'no-reply@accounts.google.com',
+                    body: '<p>Hi User,</p><p>Your Google Account was just signed in to from a new Windows device. If this was you, you can ignore this message. If not, we recommend you <a href="#" class="email-link">review your account activity</a>.</p><p>Google Account Team</p>',
+                    isPhishing: false,
+                    explanation: 'This is typical of legitimate security alerts. It informs without panicking, and the sender domain is correctly google.com. Always verify by checking your account directly.'
+                }
+            ];
+
+            var currentEmail = 0;
+            var score = 0;
+            var answered = false;
+
+            var subjectEl = document.getElementById('email-subject');
+            var fromEl = document.getElementById('email-from');
+            var bodyEl = document.getElementById('email-body');
+            var feedbackEl = document.getElementById('phish-feedback');
+            var scoreEl = document.getElementById('phish-score');
+            var totalEl = document.getElementById('phish-total');
+            var nextBtn = document.getElementById('next-email-btn');
+            var legitBtn = document.getElementById('legit-btn');
+            var phishBtn = document.getElementById('phish-btn');
+
+            function loadEmail() {
+                if (currentEmail >= emails.length) {
+                    var emoji = score === emails.length ? '&#127942;' :
+                        score >= emails.length / 2 ? '&#128077;' : '&#128218;';
+
+                    document.getElementById('phishing-quiz-container').innerHTML =
+                        '<div class="quiz-score">' +
+                            '<div style="font-size: 4rem;">' + emoji + '</div>' +
+                            '<h3>' + score + ' / ' + emails.length + ' Correct</h3>' +
+                            '<p style="color: var(--text-light);">' +
+                                (score === emails.length
+                                    ? 'Perfect! You have a sharp eye for phishing.'
+                                    : 'Keep practicing! Phishing emails get more sophisticated every day.') +
+                            '</p>' +
+                            '<button class="btn btn-primary mt-2" onclick="location.reload()">Try Again</button>' +
+                        '</div>';
+                    return;
+                }
+
+                var email = emails[currentEmail];
+                subjectEl.textContent = email.subject;
+                fromEl.textContent = 'From: ' + email.from;
+                bodyEl.innerHTML = email.body;
+                feedbackEl.textContent = '';
+                feedbackEl.style.color = '';
+                nextBtn.classList.add('hidden');
+                legitBtn.disabled = false;
+                phishBtn.disabled = false;
+                answered = false;
+                totalEl.textContent = currentEmail;
+            }
+
+            function answer(guessIsPhishing) {
+                if (answered) return;
+                answered = true;
+
+                var email = emails[currentEmail];
+                var correct = email.isPhishing === guessIsPhishing;
+
+                if (correct) score++;
+                scoreEl.textContent = score;
+
+                feedbackEl.textContent = (correct ? '&#10004; Correct! ' : '&#10008; Wrong! ') + email.explanation;
+                feedbackEl.style.color = correct ? 'var(--success)' : 'var(--danger)';
+
+                legitBtn.disabled = true;
+                phishBtn.disabled = true;
+                nextBtn.classList.remove('hidden');
+            }
+
+            legitBtn.addEventListener('click', function () { answer(false); });
+            phishBtn.addEventListener('click', function () { answer(true); });
+            nextBtn.addEventListener('click', function () {
+                currentEmail++;
+                loadEmail();
+            });
+
+            loadEmail();
+        })();
     </script>
 </body>
 </html>

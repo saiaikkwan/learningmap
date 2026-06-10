@@ -3,59 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cipher Lab - Learning Map</title>
+    <title>Cipher Lab &mdash; Learning Map</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo"><i class="fas fa-shield-alt"></i><span>Learning Map</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Web Dev <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../web-development/">Overview</a></li><li><a href="../web-development/frontend.html">Frontend</a></li><li><a href="../web-development/backend.html">Backend</a></li><li><a href="../web-development/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../cybersecurity/">Overview</a></li><li><a href="../cybersecurity/fundamentals.html">Fundamentals</a></li><li><a href="../cybersecurity/network-security.html">Network Security</a></li><li><a href="../cybersecurity/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Networking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../networking/">Overview</a></li><li><a href="../networking/fundamentals.html">Fundamentals</a></li><li><a href="../networking/cisco.html">Cisco Track</a></li><li><a href="../networking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Ethical Hacking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../ethical-hacking/">Overview</a></li><li><a href="../ethical-hacking/platforms.html">Platforms</a></li><li><a href="../ethical-hacking/tools.html">Tools</a></li><li><a href="../ethical-hacking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../resources/">All Resources</a></li><li><a href="../resources/comparison.html">Comparison</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle active">Tools <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="password-checker.html">Password Checker</a></li><li><a href="cipher-lab.html">Cipher Lab</a></li><li><a href="phishing-quiz.html">Phishing Quiz</a></li></ul></li>
-                <li><a href="../my-journey.html">My Journey</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon" id="theme-icon"></i></button>
-            <button class="hamburger"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
+    <!-- Header loads automatically via loader.js -->
 
     <header class="hero">
-        <h1><i class="fas fa-lock"></i> Caesar <span class="highlight">Cipher Lab</span></h1>
+        <h1>
+            <i class="fas fa-lock"></i> Caesar <span class="highlight">Cipher Lab</span>
+        </h1>
         <p>Learn how basic encryption works by shifting letters.</p>
     </header>
 
     <section class="container">
         <div class="tool-container">
             <h3>Encrypt / Decrypt</h3>
-            <p style="color: var(--text-light); margin-bottom: 1rem;">Shift of 3 turns "A" into "D", "B" into "E", etc.</p>
-            <label style="display:block;margin-bottom:0.5rem;font-weight:600;">Text:</label>
-            <input type="text" id="cipher-input" class="tool-input" placeholder="Enter your message...">
-            <label style="display:block;margin-bottom:0.5rem;font-weight:600;">Shift (1-25):</label>
-            <input type="number" id="cipher-shift" class="tool-input" value="3" min="1" max="25" style="width:100px;">
-            <div style="display:flex;gap:1rem;margin-bottom:1.5rem;"><button id="encrypt-btn" class="btn btn-primary">Encrypt</button><button id="decrypt-btn" class="btn btn-outline">Decrypt</button></div>
-            <label style="display:block;margin-bottom:0.5rem;font-weight:600;">Result:</label>
-            <div class="tool-output" id="cipher-output">Your result will appear here...</div>
-            <div class="resource-note mt-2">Modern encryption like AES uses the same principle — just with much more complex math and much larger keys.</div>
+            <p style="color: var(--text-light); margin-bottom: 1rem;">
+                The Caesar cipher shifts each letter by a fixed number.
+                A shift of 3 turns "A" into "D", "B" into "E", etc.
+            </p>
+
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Text:</label>
+            <input
+                type="text"
+                id="cipher-input"
+                class="tool-input"
+                placeholder="Enter your message..."
+            >
+
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Shift (1&ndash;25):</label>
+            <input
+                type="number"
+                id="cipher-shift"
+                class="tool-input"
+                value="3"
+                min="1"
+                max="25"
+                style="width: 100px;"
+            >
+
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <button id="encrypt-btn" class="btn btn-primary">Encrypt</button>
+                <button id="decrypt-btn" class="btn btn-outline">Decrypt</button>
+            </div>
+
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Result:</label>
+            <div class="tool-output" id="cipher-output">Your result will appear here&hellip;</div>
+
+            <div class="resource-note mt-2">
+                Modern encryption like AES uses the same principle &mdash;
+                just with much more complex math and much larger keys.
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content"><div class="footer-section"><h4>Learning Map</h4><p>Part of <a href="/">saiaikkwan.com</a></p></div></div>
-        <div class="footer-bottom"><p>For educational purposes. © 2024</p></div>
-    </footer>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
+    <script src="../js/loader.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        function caesar(str, shift, encrypt = true) { if (!encrypt) shift = (26 - (shift % 26)) % 26; return str.split('').map(c => { if (c.match(/[a-z]/i)) { const code = c.charCodeAt(0); const base = code >= 65 && code <= 90 ? 65 : 97; return String.fromCharCode(((code - base + shift) % 26) + base); } return c; }).join(''); }
-        document.getElementById('encrypt-btn').addEventListener('click', () => { document.getElementById('cipher-output').textContent = caesar(document.getElementById('cipher-input').value, parseInt(document.getElementById('cipher-shift').value) || 3, true) || '(empty result)'; });
-        document.getElementById('decrypt-btn').addEventListener('click', () => { document.getElementById('cipher-output').textContent = caesar(document.getElementById('cipher-input').value, parseInt(document.getElementById('cipher-shift').value) || 3, false) || '(empty result)'; });
+        (function () {
+            'use strict';
+
+            function caesarCipher(str, shift, encrypt) {
+                if (!encrypt) {
+                    shift = (26 - (shift % 26)) % 26;
+                }
+
+                return str.split('').map(function (char) {
+                    if (char.match(/[a-z]/i)) {
+                        var code = char.charCodeAt(0);
+                        var base = (code >= 65 && code <= 90) ? 65 : 97;
+                        return String.fromCharCode(((code - base + shift) % 26) + base);
+                    }
+                    return char;
+                }).join('');
+            }
+
+            document.getElementById('encrypt-btn').addEventListener('click', function () {
+                var text = document.getElementById('cipher-input').value;
+                var shift = parseInt(document.getElementById('cipher-shift').value, 10) || 3;
+                document.getElementById('cipher-output').textContent =
+                    caesarCipher(text, shift, true) || '(empty result)';
+            });
+
+            document.getElementById('decrypt-btn').addEventListener('click', function () {
+                var text = document.getElementById('cipher-input').value;
+                var shift = parseInt(document.getElementById('cipher-shift').value, 10) || 3;
+                document.getElementById('cipher-output').textContent =
+                    caesarCipher(text, shift, false) || '(empty result)';
+            });
+        })();
     </script>
 </body>
 </html>

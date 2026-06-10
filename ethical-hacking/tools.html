@@ -3,66 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacking Tools - Learning Map</title>
+    <title>Hacking Tools &mdash; Learning Map</title>
     <meta name="description" content="Essential ethical hacking tools: Kali Linux, Nmap, Burp Suite, Metasploit, and setup guides.">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="progress-bar-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 1001; background: transparent;">
-        <div id="reading-progress" class="progress-bar-fill" style="width: 0%; height: 100%; border-radius: 0;"></div>
-    </div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo"><i class="fas fa-shield-alt"></i><span>Learning Map</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Web Dev <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../web-development/">Overview</a></li><li><a href="../web-development/frontend.html">Frontend</a></li><li><a href="../web-development/backend.html">Backend</a></li><li><a href="../web-development/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../cybersecurity/">Overview</a></li><li><a href="../cybersecurity/fundamentals.html">Fundamentals</a></li><li><a href="../cybersecurity/network-security.html">Network Security</a></li><li><a href="../cybersecurity/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Networking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../networking/">Overview</a></li><li><a href="../networking/fundamentals.html">Fundamentals</a></li><li><a href="../networking/cisco.html">Cisco Track</a></li><li><a href="../networking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle active">Ethical Hacking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="index.html">Overview</a></li><li><a href="platforms.html">Platforms</a></li><li><a href="tools.html">Tools</a></li><li><a href="quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../resources/">All Resources</a></li><li><a href="../resources/comparison.html">Comparison</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Tools <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../tools/password-checker.html">Password Checker</a></li><li><a href="../tools/cipher-lab.html">Cipher Lab</a></li><li><a href="../tools/phishing-quiz.html">Phishing Quiz</a></li></ul></li>
-                <li><a href="../my-journey.html">My Journey</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon" id="theme-icon"></i></button>
-            <button class="hamburger"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
+    <!-- Header loads automatically via loader.js -->
 
     <div class="page-with-sidebar" style="padding-top: 80px;">
         <aside class="sidebar">
-            <p class="sidebar-title"><i class="fas fa-user-secret"></i> Ethical Hacking</p>
+            <p class="sidebar-title">
+                <i class="fas fa-user-secret"></i> Ethical Hacking
+            </p>
             <ul class="sidebar-menu">
                 <li><a href="index.html">Overview</a></li>
                 <li><a href="platforms.html">Platforms</a></li>
-                <li><a href="tools.html" class="active">Tools & Setup</a></li>
+                <li><a href="tools.html" class="active">Tools &amp; Setup</a></li>
                 <li><a href="quiz.html">Take Quiz</a></li>
             </ul>
         </aside>
+
         <main class="content-area">
             <header class="hero">
-                <h1><i class="fas fa-tools"></i> <span class="highlight">Tools</span> & Setup</h1>
+                <h1>
+                    <i class="fas fa-tools"></i> <span class="highlight">Tools</span> &amp; Setup
+                </h1>
                 <p>Essential tools for ethical hacking and how to get started.</p>
             </header>
+
             <div class="cards-grid">
-                <div class="card"><div class="card-icon"><i class="fas fa-dragon"></i></div><h3>Kali Linux</h3><p>The standard OS for penetration testing. Run in VirtualBox/VMware or WSL2 on Windows.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-search"></i></div><h3>Nmap</h3><p>Network discovery and scanning. <code>nmap -sV target</code> for version scan.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-spider"></i></div><h3>Burp Suite</h3><p>Web app security testing. Community edition is free. Intercept and modify HTTP traffic.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-bomb"></i></div><h3>Metasploit</h3><p>Exploitation framework. Start with <code>msfconsole</code>. Use only on authorized targets.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-key"></i></div><h3>Hashcat</h3><p>Password cracking. Use our <a href="../tools/password-checker.html">Password Checker</a> to see why strong passwords matter.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-wifi"></i></div><h3>Wireshark</h3><p>Network protocol analyzer. Capture and inspect packets in real-time.</p></div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-dragon"></i></div>
+                    <h3>Kali Linux</h3>
+                    <p>The standard OS for penetration testing. Run in VirtualBox/VMware or WSL2 on Windows.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-search"></i></div>
+                    <h3>Nmap</h3>
+                    <p>Network discovery and scanning. <code>nmap -sV target</code> for version scan.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-spider"></i></div>
+                    <h3>Burp Suite</h3>
+                    <p>Web app security testing. Community edition is free. Intercept and modify HTTP traffic.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bomb"></i></div>
+                    <h3>Metasploit</h3>
+                    <p>Exploitation framework. Start with <code>msfconsole</code>. Use only on authorized targets.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-key"></i></div>
+                    <h3>Hashcat</h3>
+                    <p>Password cracking. Use our <a href="../tools/password-checker.html">Password Checker</a> to see why strong passwords matter.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-wifi"></i></div>
+                    <h3>Wireshark</h3>
+                    <p>Network protocol analyzer. Capture and inspect packets in real-time.</p>
+                </div>
             </div>
-            <div class="resource-card mt-2"><h3>Tools Alone Don't Make a Hacker</h3><div class="resource-note"><p>Knowing <strong>why</strong> an exploit works, <strong>what</strong> vulnerability it targets, and <strong>how</strong> to fix it — that's the real skill.</p></div></div>
+
+            <div class="resource-card mt-2">
+                <h3>Tools Alone Don't Make a Hacker</h3>
+                <div class="resource-note">
+                    <p>
+                        Knowing <strong>why</strong> an exploit works, <strong>what</strong> vulnerability it targets,
+                        and <strong>how</strong> to fix it &mdash; that's the real skill. Tools are just automation.
+                    </p>
+                </div>
+            </div>
         </main>
     </div>
 
-    <footer>
-        <div class="footer-content"><div class="footer-section"><h4>Learning Map</h4><p>Part of <a href="/">saiaikkwan.com</a></p></div></div>
-        <div class="footer-bottom"><p>For educational purposes only. © 2024</p></div>
-    </footer>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
+    <script src="../js/loader.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

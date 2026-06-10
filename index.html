@@ -3,89 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Map - Sai Aik Kwan</title>
-    <meta name="description" content="My curated learning journey across Web Development, Cybersecurity, Ethical Hacking, and Networking. Resources, notes, and honest reviews.">
+    <title>Learning Map &mdash; Sai Aik Kwan</title>
+    <meta name="description" content="My curated learning journey across Web Development, Cybersecurity, Networking, and Ethical Hacking. Resources, notes, and honest reviews.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="progress-bar-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 1001; background: transparent;">
-        <div id="reading-progress" class="progress-bar-fill" style="width: 0%; height: 100%; border-radius: 0;"></div>
-    </div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Portfolio</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Web Dev <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="web-development/">Overview</a></li>
-                        <li><a href="web-development/frontend.html">Frontend</a></li>
-                        <li><a href="web-development/backend.html">Backend</a></li>
-                        <li><a href="web-development/quiz.html">Quiz</a></li>
-                    </ul>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="cybersecurity/">Overview</a></li>
-                        <li><a href="cybersecurity/fundamentals.html">Fundamentals</a></li>
-                        <li><a href="cybersecurity/network-security.html">Network Security</a></li>
-                        <li><a href="cybersecurity/quiz.html">Quiz</a></li>
-                    </ul>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Networking <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="networking/">Overview</a></li>
-                        <li><a href="networking/fundamentals.html">Fundamentals</a></li>
-                        <li><a href="networking/cisco.html">Cisco Track</a></li>
-                        <li><a href="networking/quiz.html">Quiz</a></li>
-                    </ul>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Ethical Hacking <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="ethical-hacking/">Overview</a></li>
-                        <li><a href="ethical-hacking/platforms.html">Platforms</a></li>
-                        <li><a href="ethical-hacking/tools.html">Tools</a></li>
-                        <li><a href="ethical-hacking/quiz.html">Quiz</a></li>
-                    </ul>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="resources/">All Resources</a></li>
-                        <li><a href="resources/comparison.html">Comparison</a></li>
-                    </ul>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Tools <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="tools/password-checker.html">Password Checker</a></li>
-                        <li><a href="tools/cipher-lab.html">Cipher Lab</a></li>
-                        <li><a href="tools/phishing-quiz.html">Phishing Quiz</a></li>
-                    </ul>
-                </li>
-                <li><a href="my-journey.html">My Journey</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <i class="fas fa-moon" id="theme-icon"></i>
-            </button>
-            <button class="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <!-- Header loads automatically via loader.js -->
 
     <header class="hero">
         <h1>My <span class="highlight">Learning Map</span></h1>
-        <p>Not another course platform — just my personal curated journey through web development, cybersecurity, ethical hacking, and networking. Everything here is something I've used, reviewed, or plan to explore.</p>
+        <p>
+            Not another course platform &mdash; just my personal curated journey through
+            web development, cybersecurity, networking, and ethical hacking. Everything
+            here is something I've used, reviewed, or plan to explore.
+        </p>
+
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number" id="resources-count">0</div>
@@ -102,47 +35,58 @@
         </div>
     </header>
 
+    <!-- Cross-Skill Connections -->
     <section class="container">
         <div class="cross-skill">
             <h2>How These Skills <span class="highlight">Connect</span></h2>
-            <p class="text-center mb-2" style="color: var(--text-light);">These domains aren't separate — they reinforce each other.</p>
+            <p class="text-center mb-2" style="color: var(--text-light);">
+                These domains aren't separate &mdash; they reinforce each other.
+            </p>
+
             <div class="cross-skill-diagram">
                 <div class="skill-node">
                     <i class="fas fa-code"></i>
                     <p>Web Development</p>
                 </div>
-                <div class="skill-connector">Secure Coding →</div>
+                <div class="skill-connector">Secure Coding &rarr;</div>
                 <div class="skill-node">
                     <i class="fas fa-shield-alt"></i>
                     <p>Cybersecurity</p>
                 </div>
-                <div class="skill-connector">Network Layer →</div>
+                <div class="skill-connector">Network Layer &rarr;</div>
                 <div class="skill-node">
                     <i class="fas fa-network-wired"></i>
                     <p>Networking</p>
                 </div>
-                <div class="skill-connector">Offensive →</div>
+                <div class="skill-connector">Offensive &rarr;</div>
                 <div class="skill-node">
                     <i class="fas fa-user-secret"></i>
                     <p>Ethical Hacking</p>
                 </div>
             </div>
+
             <p class="text-center mt-2" style="color: var(--text-light);">
-                <strong>Web Dev</strong> builds it. <strong>Cybersecurity</strong> protects it. <strong>Networking</strong> connects it. <strong>Ethical Hacking</strong> breaks it — so you can build better defenses.
+                <strong>Web Dev</strong> builds it.
+                <strong>Cybersecurity</strong> protects it.
+                <strong>Networking</strong> connects it.
+                <strong>Ethical Hacking</strong> breaks it &mdash; to build better defenses.
             </p>
         </div>
     </section>
 
+    <!-- Track Cards -->
     <section class="container">
         <div class="section-header">
             <h2>Explore by <span class="highlight">Track</span></h2>
-            <p>Each track contains curated resources, my personal notes, and a quiz to test your knowledge.</p>
+            <p>Each track contains curated resources, my personal notes, and a quiz.</p>
         </div>
+
         <div class="cards-grid three-col">
+            <!-- Web Development -->
             <div class="card">
                 <div class="card-icon"><i class="fas fa-code"></i></div>
                 <h3>Web Development</h3>
-                <p>Frontend, backend, and full-stack resources that I've used to build real projects.</p>
+                <p>Frontend, backend, and full-stack resources I've used to build real projects.</p>
                 <div class="card-tags">
                     <span class="tag tag-beginner">Beginner</span>
                     <span class="tag tag-intermediate">Intermediate</span>
@@ -150,8 +94,10 @@
                 <div class="progress-bar-container">
                     <div class="progress-bar-fill" id="web-dev-progress" style="width: 0%;"></div>
                 </div>
-                <a href="web-development/" class="btn btn-outline btn-sm">Explore Track →</a>
+                <a href="web-development/" class="btn btn-outline btn-sm">Explore Track &rarr;</a>
             </div>
+
+            <!-- Cybersecurity -->
             <div class="card">
                 <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Cybersecurity</h3>
@@ -163,12 +109,14 @@
                 <div class="progress-bar-container">
                     <div class="progress-bar-fill" id="cybersec-progress" style="width: 0%;"></div>
                 </div>
-                <a href="cybersecurity/" class="btn btn-outline btn-sm">Explore Track →</a>
+                <a href="cybersecurity/" class="btn btn-outline btn-sm">Explore Track &rarr;</a>
             </div>
+
+            <!-- Networking -->
             <div class="card">
                 <div class="card-icon"><i class="fas fa-network-wired"></i></div>
                 <h3>Networking</h3>
-                <p>OSI model, TCP/IP, subnetting, Cisco CCNA — the backbone of everything digital.</p>
+                <p>OSI model, TCP/IP, subnetting, Cisco CCNA &mdash; the backbone of everything digital.</p>
                 <div class="card-tags">
                     <span class="tag tag-beginner">Beginner</span>
                     <span class="tag tag-intermediate">Intermediate</span>
@@ -176,8 +124,10 @@
                 <div class="progress-bar-container">
                     <div class="progress-bar-fill" id="networking-progress" style="width: 0%;"></div>
                 </div>
-                <a href="networking/" class="btn btn-outline btn-sm">Explore Track →</a>
+                <a href="networking/" class="btn btn-outline btn-sm">Explore Track &rarr;</a>
             </div>
+
+            <!-- Ethical Hacking -->
             <div class="card">
                 <div class="card-icon"><i class="fas fa-user-secret"></i></div>
                 <h3>Ethical Hacking</h3>
@@ -189,105 +139,95 @@
                 <div class="progress-bar-container">
                     <div class="progress-bar-fill" id="hacking-progress" style="width: 0%;"></div>
                 </div>
-                <a href="ethical-hacking/" class="btn btn-outline btn-sm">Explore Track →</a>
+                <a href="ethical-hacking/" class="btn btn-outline btn-sm">Explore Track &rarr;</a>
             </div>
         </div>
     </section>
 
+    <!-- Quick Links -->
     <section class="container">
         <div class="cards-grid three-col" style="padding-top: 0;">
             <div class="card">
                 <div class="card-icon"><i class="fas fa-table"></i></div>
                 <h3>Resource Comparison</h3>
                 <p>Side-by-side comparison of learning platforms I've used.</p>
-                <a href="resources/comparison.html" class="btn btn-outline btn-sm">Compare →</a>
+                <a href="resources/comparison.html" class="btn btn-outline btn-sm">Compare &rarr;</a>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fas fa-tools"></i></div>
                 <h3>Interactive Tools</h3>
                 <p>Password checker, cipher lab, and phishing quiz.</p>
-                <a href="tools/" class="btn btn-outline btn-sm">Try Tools →</a>
+                <a href="tools/" class="btn btn-outline btn-sm">Try Tools &rarr;</a>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fas fa-map"></i></div>
                 <h3>My Journey</h3>
                 <p>Timeline of what I learned and when.</p>
-                <a href="my-journey.html" class="btn btn-outline btn-sm">View Timeline →</a>
+                <a href="my-journey.html" class="btn btn-outline btn-sm">View Timeline &rarr;</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Learning Map</h4>
-                <p>Part of <a href="/">saiaikkwan.com</a> — my personal curated learning journey.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Tracks</h4>
-                <ul>
-                    <li><a href="web-development/">Web Development</a></li>
-                    <li><a href="cybersecurity/">Cybersecurity</a></li>
-                    <li><a href="networking/">Networking</a></li>
-                    <li><a href="ethical-hacking/">Ethical Hacking</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="resources/">All Resources</a></li>
-                    <li><a href="tools/">Interactive Tools</a></li>
-                    <li><a href="my-journey.html">My Journey</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Curated with honest opinions. Not sponsored. © 2024</p>
-        </div>
-    </footer>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
+    <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
     <script src="js/progress.js"></script>
-    <script src="js/progress.js"></script>
-<script>
-    // Load stats
-    fetch('data/resources.json')
-        .then(res => res.json())
-        .then(data => {
-            let total = 0;
-            let completed = 0;
-            function countResources(obj) {
-                if (Array.isArray(obj)) {
-                    obj.forEach(item => { total++; if (item.status === 'completed') completed++; });
-                } else {
-                    Object.values(obj).forEach(countResources);
-                }
-            }
-            countResources(data);
-            document.getElementById('resources-count').textContent = total;
-            document.getElementById('completed-count').textContent = completed;
-        });
+    <script>
+        (function () {
+            'use strict';
 
-    // Load progress bars (runs after header is loaded)
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const progress = JSON.parse(localStorage.getItem('learningmap_progress') || '{}');
-            
-            const bars = {
-                'web-development': 'web-dev-progress',
-                'cybersecurity': 'cybersec-progress',
-                'networking': 'networking-progress',
-                'ethical-hacking': 'hacking-progress'
-            };
-            
-            Object.entries(bars).forEach(([key, id]) => {
-                const bar = document.getElementById(id);
-                if (bar && progress[key]) {
-                    bar.style.width = progress[key].percentage + '%';
-                }
+            // Load resource stats
+            fetch('data/resources.json')
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    var total = 0;
+                    var completed = 0;
+
+                    function countResources(obj) {
+                        if (Array.isArray(obj)) {
+                            obj.forEach(function (item) {
+                                total++;
+                                if (item.status === 'completed') {
+                                    completed++;
+                                }
+                            });
+                        } else if (typeof obj === 'object') {
+                            Object.values(obj).forEach(countResources);
+                        }
+                    }
+
+                    countResources(data);
+
+                    document.getElementById('resources-count').textContent = total;
+                    document.getElementById('completed-count').textContent = completed;
+                });
+
+            // Load progress bars (after header loads)
+            window.addEventListener('load', function () {
+                setTimeout(function () {
+                    var progress = JSON.parse(
+                        localStorage.getItem('learningmap_progress') || '{}'
+                    );
+
+                    var bars = {
+                        'web-development': 'web-dev-progress',
+                        'cybersecurity': 'cybersec-progress',
+                        'networking': 'networking-progress',
+                        'ethical-hacking': 'hacking-progress'
+                    };
+
+                    Object.keys(bars).forEach(function (key) {
+                        var bar = document.getElementById(bars[key]);
+
+                        if (bar && progress[key]) {
+                            bar.style.width = progress[key].percentage + '%';
+                        }
+                    });
+                }, 300);
             });
-        }, 300); // Small delay to ensure header is loaded
-    });
-</script>
+        })();
+    </script>
 </body>
 </html>

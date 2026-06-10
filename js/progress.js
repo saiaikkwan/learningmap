@@ -1,70 +1,89 @@
-class ProgressTracker {
-    constructor() {
-        this.storageKey = 'learningmap_progress';
-    }
+/**
+ * Progress Tracker
+ * Manages learning progress stored in localStorage.
+ */
+var ProgressTracker = (function () {
+    'use strict';
 
-    getAllProgress() {
-        return JSON.parse(localStorage.getItem(this.storageKey) || '{}');
-    }
+    var STORAGE_KEY = 'learningmap_progress';
 
-    getTrackProgress(track) {
-        const progress = this.getAllProgress();
+    /**
+     * @constructor
+     */
+    function ProgressTracker() {}
+
+    /**
+     * Get all progress data
+     * @returns {Object}
+     */
+    ProgressTracker.prototype.getAllProgress = function () {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    };
+
+    /**
+     * Get progress for a specific track
+     * @param {string} track - Track identifier
+     * @returns {Object|null}
+     */
+    ProgressTracker.prototype.getTrackProgress = function (track) {
+        var progress = this.getAllProgress();
         return progress[track] || null;
-    }
+    };
 
-    markCompleted(track, item) {
-        const progress = this.getAllProgress();
-        if (!progress[track]) progress[track] = { completed: [], score: 0, total: 0 };
-        if (!progress[track].completed.includes(item)) {
+    /**
+     * Mark an item as completed within a track
+     * @param {string} track - Track identifier
+     * @param {string} item - Item to mark as completed
+     */
+    ProgressTracker.prototype.markCompleted = function (track, item) {
+        var progress = this.getAllProgress();
+
+        if (!progress[track]) {
+            progress[track] = {
+                completed: [],
+                score: 0,
+                total: 0
+            };
+        }
+
+        if (progress[track].completed.indexOf(item) === -1) {
             progress[track].completed.push(item);
         }
-        localStorage.setItem(this.storageKey, JSON.stringify(progress));
-    }
 
-    isCompleted(track, item) {
-        const progress = this.getAllProgress();
-        return progress[track]?.completed?.includes(item) || false;
-    }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    };
 
-    getCompletionPercentage(track, totalItems) {
-        const progress = this.getAllProgress();
-        if (!progress[track]) return 0;
-        return Math.round((progress[track].completed?.length || 0) / totalItems * 100);
-    }
+    /**
+     * Check if an item is completed
+     * @param {string} track - Track identifier
+     * @param {string} item - Item to check
+     * @returns {boolean}
+     */
+    ProgressTracker.prototype.isCompleted = function (track, item) {
+        var progress = this.getAllProgress();
+        var completed = progress[track] && progress[track].completed;
 
-    renderDashboard() {
-        const container = document.getElementById('progress-dashboard');
-        if (!container) return;
+        return completed ? completed.indexOf(item) !== -1 : false;
+    };
 
-        const progress = this.getAllProgress();
-        const tracks = [
-            { id: 'web-development', name: 'Web Development', total: 4, icon: '🌐' },
-            { id: 'cybersecurity', name: 'Cybersecurity', total: 4, icon: '🔒' },
-            { id: 'ethical-hacking', name: 'Ethical Hacking', total: 4, icon: '🎯' }
-        ];
+    /**
+     * Get completion percentage for a track
+     * @param {string} track - Track identifier
+     * @param {number} totalItems - Total items in the track
+     * @returns {number}
+     */
+    ProgressTracker.prototype.getCompletionPercentage = function (track, totalItems) {
+        var progress = this.getAllProgress();
 
-        container.innerHTML = tracks.map(track => {
-            const trackProgress = progress[track.id];
-            const completed = trackProgress?.completed?.length || 0;
-            const percentage = Math.round((completed / track.total) * 100);
-            const quizScore = trackProgress?.percentage || 0;
+        if (!progress[track]) {
+            return 0;
+        }
 
-            return `
-                <div class="card">
-                    <div style="font-size: 2rem;">${track.icon}</div>
-                    <h3>${track.name}</h3>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill" style="width: ${percentage}%"></div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-light);">
-                        ${completed}/${track.total} sections completed
-                        ${quizScore ? `| Quiz: ${quizScore}%` : ''}
-                    </p>
-                </div>
-            `;
-        }).join('');
-    }
-}
+        return Math.round(((progress[track].completed || []).length / totalItems) * 100);
+    };
 
-const tracker = new ProgressTracker();
-document.addEventListener('DOMContentLoaded', () => tracker.renderDashboard());
+    return ProgressTracker;
+})();
+
+// Create global instance
+var tracker = new ProgressTracker();

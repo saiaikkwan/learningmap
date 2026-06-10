@@ -3,37 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisco Track - Learning Map</title>
+    <title>Cisco Track &mdash; Learning Map</title>
     <meta name="description" content="Cisco-focused networking resources: CCNA, Packet Tracer, IOS commands, and certification prep.">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="progress-bar-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 1001; background: transparent;">
-        <div id="reading-progress" class="progress-bar-fill" style="width: 0%; height: 100%; border-radius: 0;"></div>
-    </div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo"><i class="fas fa-shield-alt"></i><span>Learning Map</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Web Dev <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../web-development/">Overview</a></li><li><a href="../web-development/frontend.html">Frontend</a></li><li><a href="../web-development/backend.html">Backend</a></li><li><a href="../web-development/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../cybersecurity/">Overview</a></li><li><a href="../cybersecurity/fundamentals.html">Fundamentals</a></li><li><a href="../cybersecurity/network-security.html">Network Security</a></li><li><a href="../cybersecurity/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle active">Networking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="index.html">Overview</a></li><li><a href="fundamentals.html">Fundamentals</a></li><li><a href="cisco.html">Cisco Track</a></li><li><a href="quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Ethical Hacking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../ethical-hacking/">Overview</a></li><li><a href="../ethical-hacking/platforms.html">Platforms</a></li><li><a href="../ethical-hacking/tools.html">Tools</a></li><li><a href="../ethical-hacking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../resources/">All Resources</a></li><li><a href="../resources/comparison.html">Comparison</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Tools <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../tools/password-checker.html">Password Checker</a></li><li><a href="../tools/cipher-lab.html">Cipher Lab</a></li><li><a href="../tools/phishing-quiz.html">Phishing Quiz</a></li></ul></li>
-                <li><a href="../my-journey.html">My Journey</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon" id="theme-icon"></i></button>
-            <button class="hamburger"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
+    <!-- Header loads automatically via loader.js -->
 
     <div class="page-with-sidebar" style="padding-top: 80px;">
         <aside class="sidebar">
-            <p class="sidebar-title"><i class="fas fa-network-wired"></i> Networking</p>
+            <p class="sidebar-title">
+                <i class="fas fa-network-wired"></i> Networking
+            </p>
             <ul class="sidebar-menu">
                 <li><a href="index.html">Overview</a></li>
                 <li><a href="fundamentals.html">Fundamentals</a></li>
@@ -41,61 +23,123 @@
                 <li><a href="quiz.html">Take Quiz</a></li>
             </ul>
         </aside>
+
         <main class="content-area">
             <header class="hero">
-                <h1><i class="fas fa-cube"></i> <span class="highlight">Cisco</span> Track</h1>
+                <h1>
+                    <i class="fas fa-cube"></i> <span class="highlight">Cisco</span> Track
+                </h1>
                 <p>CCNA-focused learning. The industry standard for networking.</p>
             </header>
+
             <h2>Cisco Certification Path</h2>
             <div class="cards-grid">
-                <div class="card"><div class="card-icon"><i class="fas fa-seedling"></i></div><h3>CCST Networking</h3><p>Entry-level. Cisco Certified Support Technician. Good starting point before CCNA.</p><div class="card-tags"><span class="tag tag-beginner">Beginner</span></div></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-medal"></i></div><h3>CCNA</h3><p>The gold standard. Covers routing, switching, security, automation, and network access.</p><div class="card-tags"><span class="tag tag-intermediate">Intermediate</span></div></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-medal"></i></div><h3>CCNP</h3><p>Professional level. Enterprise, Security, Data Center specializations. Requires CCNA first.</p><div class="card-tags"><span class="tag tag-advanced">Advanced</span></div></div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>CCST Networking</h3>
+                    <p>Entry-level. Cisco Certified Support Technician. Good starting point before CCNA.</p>
+                    <div class="card-tags"><span class="tag tag-beginner">Beginner</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-medal"></i></div>
+                    <h3>CCNA</h3>
+                    <p>The gold standard. Covers routing, switching, security, automation, and network access.</p>
+                    <div class="card-tags"><span class="tag tag-intermediate">Intermediate</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-medal"></i></div>
+                    <h3>CCNP</h3>
+                    <p>Professional level. Enterprise, Security, Data Center specializations. Requires CCNA first.</p>
+                    <div class="card-tags"><span class="tag tag-advanced">Advanced</span></div>
+                </div>
             </div>
+
             <h2 class="mt-2">Essential Cisco Skills</h2>
             <div class="cards-grid">
-                <div class="card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>IOS Commands</h3><p><code>enable</code>, <code>configure terminal</code>, <code>show running-config</code>, <code>show ip interface brief</code>, VLAN config, ACL setup.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-flask"></i></div><h3>Packet Tracer</h3><p>Cisco's free network simulation tool. Build virtual networks — no hardware needed.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-clipboard-list"></i></div><h3>Configuration Management</h3><p>Startup-config vs running-config. Backup to TFTP. Password recovery. IOS image management.</p></div>
-                <div class="card"><div class="card-icon"><i class="fas fa-search"></i></div><h3>Troubleshooting</h3><p>OSI model approach: start at Layer 1. <code>ping</code>, <code>traceroute</code>, <code>show</code> commands.</p></div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>IOS Commands</h3>
+                    <p><code>enable</code>, <code>configure terminal</code>, <code>show running-config</code>, <code>show ip interface brief</code>, VLAN config, ACL setup.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Packet Tracer</h3>
+                    <p>Cisco's free network simulation tool. Build virtual networks, configure devices &mdash; no hardware needed.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>Configuration Management</h3>
+                    <p>Startup-config vs running-config. Backup to TFTP. Password recovery. IOS image management.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-search"></i></div>
+                    <h3>Troubleshooting</h3>
+                    <p>OSI model approach: start at Layer 1. <code>ping</code>, <code>traceroute</code>, <code>show</code> commands. Divide and conquer.</p>
+                </div>
             </div>
+
             <h2 class="mt-2">Curated Cisco Resources</h2>
             <div id="resources-container"></div>
+
             <div class="resource-card mt-2">
                 <h3>My Cisco Learning Strategy</h3>
                 <div class="resource-note">
                     <p><strong>1.</strong> Watch <strong>Jeremy's IT Lab</strong> CCNA playlist (free on YouTube).</p>
-                    <p><strong>2.</strong> Practice every topic in <strong>Packet Tracer</strong>.</p>
+                    <p><strong>2.</strong> Practice every topic in <strong>Packet Tracer</strong>. Don't just watch &mdash; configure.</p>
                     <p><strong>3.</strong> Use <strong>Anki flashcards</strong> for ports, protocols, and IOS commands.</p>
-                    <p><strong>4.</strong> Take practice exams — speed matters.</p>
-                    <p><strong>5.</strong> Lab everything. Build, break, fix. Real understanding comes from troubleshooting.</p>
+                    <p><strong>4.</strong> Take practice exams &mdash; speed matters under pressure.</p>
+                    <p><strong>5.</strong> Lab everything. Build networks, break them, fix them. Real understanding comes from troubleshooting.</p>
                 </div>
             </div>
         </main>
     </div>
 
-    <footer>
-        <div class="footer-content"><div class="footer-section"><h4>Learning Map</h4><p>Part of <a href="/">saiaikkwan.com</a></p></div></div>
-        <div class="footer-bottom"><p>Curated with honest opinions. Not sponsored. © 2024</p></div>
-    </footer>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
+    <script src="../js/loader.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        fetch('../data/resources.json')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('resources-container').innerHTML = data.networking.cisco.map(r => `
-                    <div class="resource-card">
-                        <div class="resource-header"><h3>${r.name}</h3><span class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</span></div>
-                        <div class="resource-meta">
-                            <span><i class="fas fa-tag"></i> ${r.type}</span><span><i class="fas fa-dollar-sign"></i> ${r.cost}</span><span><i class="fas fa-signal"></i> ${r.level}</span><span><i class="fas fa-clock"></i> ${r.timeEstimate}</span>
-                        </div>
-                        <div class="resource-note">"${r.note}"</div>
-                        <div class="card-tags">${r.topics.map(t => `<span class="tag tag-beginner">${t}</span>`).join('')}</div>
-                        <div class="resource-links"><a href="${r.url}" class="btn btn-primary btn-sm" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visit</a></div>
-                    </div>
-                `).join('');
-            });
+        (function () {
+            'use strict';
+
+            fetch('../data/resources.json')
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    document.getElementById('resources-container').innerHTML = data.networking.cisco.map(function (r) {
+                        var stars = '';
+                        for (var i = 0; i < 5; i++) {
+                            stars += (i < r.rating) ? '&#9733;' : '&#9734;';
+                        }
+
+                        return (
+                            '<div class="resource-card">' +
+                                '<div class="resource-header">' +
+                                    '<h3>' + r.name + '</h3>' +
+                                    '<span class="rating">' + stars + '</span>' +
+                                '</div>' +
+                                '<div class="resource-meta">' +
+                                    '<span><i class="fas fa-tag"></i> ' + r.type + '</span>' +
+                                    '<span><i class="fas fa-dollar-sign"></i> ' + r.cost + '</span>' +
+                                    '<span><i class="fas fa-signal"></i> ' + r.level + '</span>' +
+                                    '<span><i class="fas fa-clock"></i> ' + r.timeEstimate + '</span>' +
+                                '</div>' +
+                                '<div class="resource-note">&ldquo;' + r.note + '&rdquo;</div>' +
+                                '<div class="card-tags">' +
+                                    r.topics.map(function (t) {
+                                        return '<span class="tag tag-beginner">' + t + '</span>';
+                                    }).join('') +
+                                '</div>' +
+                                '<div class="resource-links">' +
+                                    '<a href="' + r.url + '" class="btn btn-primary btn-sm" target="_blank" rel="noopener">' +
+                                        '<i class="fas fa-external-link-alt"></i> Visit' +
+                                    '</a>' +
+                                '</div>' +
+                            '</div>'
+                        );
+                    }).join('');
+                });
+        })();
     </script>
 </body>
 </html>

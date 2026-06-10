@@ -3,32 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Quiz - Learning Map</title>
+    <title>Web Development Quiz &mdash; Learning Map</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo"><i class="fas fa-shield-alt"></i><span>Learning Map</span></a>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle active">Web Dev <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="index.html">Overview</a></li><li><a href="frontend.html">Frontend</a></li><li><a href="backend.html">Backend</a></li><li><a href="quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../cybersecurity/">Overview</a></li><li><a href="../cybersecurity/fundamentals.html">Fundamentals</a></li><li><a href="../cybersecurity/network-security.html">Network Security</a></li><li><a href="../cybersecurity/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Networking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../networking/">Overview</a></li><li><a href="../networking/fundamentals.html">Fundamentals</a></li><li><a href="../networking/cisco.html">Cisco Track</a></li><li><a href="../networking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Ethical Hacking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../ethical-hacking/">Overview</a></li><li><a href="../ethical-hacking/platforms.html">Platforms</a></li><li><a href="../ethical-hacking/tools.html">Tools</a></li><li><a href="../ethical-hacking/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../resources/">All Resources</a></li><li><a href="../resources/comparison.html">Comparison</a></li></ul></li>
-                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Tools <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../tools/password-checker.html">Password Checker</a></li><li><a href="../tools/cipher-lab.html">Cipher Lab</a></li><li><a href="../tools/phishing-quiz.html">Phishing Quiz</a></li></ul></li>
-                <li><a href="../my-journey.html">My Journey</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon" id="theme-icon"></i></button>
-            <button class="hamburger"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
+    <!-- Header loads automatically via loader.js -->
 
     <div class="page-with-sidebar" style="padding-top: 80px;">
         <aside class="sidebar">
-            <p class="sidebar-title"><i class="fas fa-code"></i> Web Development</p>
+            <p class="sidebar-title">
+                <i class="fas fa-code"></i> Web Development
+            </p>
             <ul class="sidebar-menu">
                 <li><a href="index.html">Overview</a></li>
                 <li><a href="frontend.html">Frontend Resources</a></li>
@@ -36,33 +22,50 @@
                 <li><a href="quiz.html" class="active">Take Quiz</a></li>
             </ul>
         </aside>
+
         <main class="content-area">
             <header class="hero">
-                <h1><i class="fas fa-clipboard-check"></i> Web Dev <span class="highlight">Quiz</span></h1>
+                <h1>
+                    <i class="fas fa-clipboard-check"></i> Web Dev <span class="highlight">Quiz</span>
+                </h1>
                 <p>5 questions to test your frontend and backend knowledge.</p>
             </header>
-            <div class="quiz-container" id="quiz-container"><p style="text-align: center; color: var(--text-light);">Loading quiz...</p></div>
+
+            <div class="quiz-container" id="quiz-container">
+                <p style="text-align: center; color: var(--text-light);">Loading quiz&hellip;</p>
+            </div>
         </main>
     </div>
 
-    <footer>
-        <div class="footer-content"><div class="footer-section"><h4>Learning Map</h4><p>Part of <a href="/">saiaikkwan.com</a></p></div></div>
-        <div class="footer-bottom"><p>Curated with honest opinions. Not sponsored. © 2024</p></div>
-    </footer>
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
 
+    <script src="../js/loader.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/quiz-engine.js"></script>
     <script>
-    const quizContainer = document.getElementById('quiz-container');
-    fetch('../data/quizzes.json')
-        .then(res => res.json())
-        .then(data => {
-            const quiz = new QuizEngine('quiz-container', data['web-development'].questions, 'web-development');
-            quiz.start();
-        })
-        .catch(err => {
-            quizContainer.innerHTML = `<p style="text-align:center;color:var(--danger);">Failed to load quiz. ${err.message}</p>`;
-        });
-</script>
+        (function () {
+            'use strict';
+
+            var quizContainer = document.getElementById('quiz-container');
+
+            fetch('../data/quizzes.json')
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    var quiz = new QuizEngine(
+                        'quiz-container',
+                        data['web-development'].questions,
+                        'web-development'
+                    );
+                    quiz.start();
+                })
+                .catch(function (err) {
+                    quizContainer.innerHTML =
+                        '<p style="text-align:center;color:var(--danger);">' +
+                        'Failed to load quiz. ' + err.message +
+                        '</p>';
+                });
+        })();
+    </script>
 </body>
 </html>
