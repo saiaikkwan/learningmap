@@ -1,84 +1,70 @@
 /**
  * Header & Footer Loader
- * Dynamically loads shared header and footer components.
- * Works for all page depths within the learningmap folder.
+ * Dynamically loads shared components from the correct relative path.
  */
 (function () {
     'use strict';
 
     /**
-     * Determine the correct relative path to the root folder.
+     * Calculate the relative path to the learningmap root
      */
     function getRootPath() {
         var path = window.location.pathname;
 
-        // Remove trailing slash and index.html
-        path = path.replace(/\/$/, '').replace(/\/index\.html$/, '');
+        // Normalize
+        path = path.replace(/\/index\.html$/, '').replace(/\/$/, '');
 
-        // Find the learningmap folder position
+        // Find /learningmap position
         var learningmapIndex = path.indexOf('/learningmap');
 
         if (learningmapIndex === -1) {
-            // Not inside learningmap folder
             return './';
         }
 
-        // Get everything after /learningmap/
-        var afterLearningmap = path.substring(learningmapIndex + '/learningmap'.length);
+        // Get everything after /learningmap
+        var after = path.substring(learningmapIndex + '/learningmap'.length);
+        after = after.replace(/^\//, '');
 
-        // Remove leading slash
-        afterLearningmap = afterLearningmap.replace(/^\//, '');
-
-        // If empty, we're at the root
-        if (afterLearningmap.length === 0) {
+        if (after.length === 0) {
             return './';
         }
 
-        // Count subfolders
-        var parts = afterLearningmap.split('/');
-        var depth = parts.length;
+        // Count directories
+        var parts = after.split('/').filter(function (p) {
+            return p.length > 0;
+        });
 
-        // Build relative path
         var rootPath = '';
-        for (var i = 0; i < depth; i++) {
+        for (var i = 0; i < parts.length; i++) {
             rootPath += '../';
         }
 
-        return rootPath;
-    }
-
-    /**
-     * Log the detected path for debugging
-     */
-    function debugPath() {
-        var path = window.location.pathname;
-        var rootPath = getRootPath();
-        console.log('Loader: Current path = ' + path);
-        console.log('Loader: Root path = ' + rootPath);
-        console.log('Loader: Header URL = ' + rootPath + 'components/header.html');
-        console.log('Loader: Footer URL = ' + rootPath + 'components/footer.html');
+        console.log('Loader: path=' + path + ' | after=' + after + ' | depth=' + parts.length + ' | root=' + rootPath);
+        return rootPath || './';
     }
 
     var rootPath = getRootPath();
-    debugPath();
+    var headerUrl = rootPath + 'components/header.html';
+    var footerUrl = rootPath + 'components/footer.html';
+
+    console.log('Loader: Header URL = ' + headerUrl);
+    console.log('Loader: Footer URL = ' + footerUrl);
 
     /**
-     * Load the header component
+     * Load header
      */
     function loadHeader() {
-        var headerUrl = rootPath + 'components/header.html';
-
         return fetch(headerUrl)
             .then(function (response) {
                 if (!response.ok) {
-                    throw new Error('Header not found: HTTP ' + response.status + ' at ' + headerUrl);
+                    throw new Error('Header not found: HTTP ' + response.status + ' — ' + headerUrl);
                 }
                 return response.text();
             })
             .then(function (html) {
-                var headerHTML = html.replace(/%ROOT%/g, rootPath);
+                var finalHTML = html.replace(/%ROOT%/g, rootPath);
                 var tempDiv = document.createElement('div');
-                tempDiv.innerHTML = headerHTML;
+                tempDiv.innerHTML = finalHTML;
 
                 var nodes = Array.prototype.slice.call(tempDiv.childNodes);
                 var firstChild = document.body.firstChild;
@@ -87,155 +73,117 @@
                     document.body.insertBefore(node, firstChild);
                 });
 
+                // Init nav after header is in DOM
                 initNavigation();
-                console.log('Loader: Header loaded successfully');
+                console.log('Loader: Header loaded ✓');
             })
             .catch(function (error) {
-                console.error('Loader: Header load failed - ' + error.message);
+                console.error('Loader: ' + error.message);
                 document.body.insertAdjacentHTML('afterbegin',
-                    '<div style="background: var(--danger); color: white; text-align: center; padding: 0.5rem; font-size: 0.85rem;">' +
-                    'Navigation failed to load. <a href="' + rootPath + 'index.html" style="color: white; text-decoration: underline;">Go to Home</a>' +
+                    '<div style="background:var(--danger);color:#fff;text-align:center;padding:0.75rem;font-size:0.85rem;">' +
+                    '⚠ Navigation failed to load. <a href="' + rootPath + 'index.html" style="color:#fff;text-decoration:underline;">Go to Home</a>' +
                     '</div>'
                 );
             });
     }
 
     /**
-     * Load the footer component
+     * Load footer
      */
     function loadFooter() {
-        var footerUrl = rootPath + 'components/footer.html';
-
         return fetch(footerUrl)
             .then(function (response) {
                 if (!response.ok) {
-                    throw new Error('Footer not found: HTTP ' + response.status + ' at ' + footerUrl);
+                    throw new Error('Footer not found: HTTP ' + response.status + ' — ' + footerUrl);
                 }
                 return response.text();
             })
             .then(function (html) {
-                var footerHTML = html.replace(/%ROOT%/g, rootPath);
+                var finalHTML = html.replace(/%ROOT%/g, rootPath);
                 var placeholder = document.getElementById('footer-placeholder');
 
                 if (placeholder) {
-                    placeholder.insertAdjacentHTML('beforebegin', footerHTML);
+                    placeholder.insertAdjacentHTML('beforebegin', finalHTML);
                     placeholder.remove();
                 } else {
-                    document.body.insertAdjacentHTML('beforeend', footerHTML);
+                    document.body.insertAdjacentHTML('beforeend', finalHTML);
                 }
 
-                console.log('Loader: Footer loaded successfully');
+                console.log('Loader: Footer loaded ✓');
             })
             .catch(function (error) {
-                console.error('Loader: Footer load failed - ' + error.message);
+                console.error('Loader: ' + error.message);
             });
     }
 
     /**
-     * Initialize navigation, theme, and progress bar
+     * Initialize everything after header loads
      */
     function initNavigation() {
-        setActiveNavLink();
+        setActiveNav();
         initMobileMenu();
         initDropdowns();
         initTheme();
-        initReadingProgress();
+        initProgressBar();
     }
 
     /**
-     * Set the active class on the current page's nav link
+     * Highlight current page in nav
      */
-    function setActiveNavLink() {
-        var currentPath = window.location.pathname;
+    function setActiveNav() {
+        var currentPath = window.location.pathname.replace(/\/$/, '');
         var allLinks = document.querySelectorAll('.nav-menu a[data-page]');
-        var foundActive = false;
+        var bestMatch = null;
 
-        // First pass: exact match
         allLinks.forEach(function (link) {
             var href = link.getAttribute('href');
-
             if (!href) return;
 
-            // Build the absolute path this link points to
-            var absolutePath = resolvePath(rootPath, href);
+            // Build what this link actually points to
+            var resolved = resolveUrl(rootPath, href).replace(/\/$/, '');
 
-            if (currentPath === absolutePath || currentPath === absolutePath.replace(/\/$/, '')) {
-                activateLink(link);
-                foundActive = true;
+            if (currentPath === resolved) {
+                bestMatch = link;
             }
         });
 
-        // Second pass: partial match (for index pages)
-        if (!foundActive) {
-            allLinks.forEach(function (link) {
-                var href = link.getAttribute('href');
-
-                if (!href) return;
-
-                var absolutePath = resolvePath(rootPath, href);
-
-                if (currentPath.indexOf(absolutePath.replace(/\/index\.html$/, '').replace(/\/$/, '')) !== -1 &&
-                    absolutePath.length > 1) {
-                    activateLink(link);
-                    foundActive = true;
-                }
-            });
+        // If no exact match, try home
+        if (!bestMatch) {
+            bestMatch = document.querySelector('.nav-menu a[data-page="home"]');
         }
 
-        // Fallback: highlight Home
-        if (!foundActive) {
-            var homeLink = document.querySelector('.nav-menu a[data-page="home"]');
-            if (homeLink) {
-                activateLink(homeLink);
+        if (bestMatch) {
+            bestMatch.classList.add('active');
+
+            var dropdown = bestMatch.closest('.nav-dropdown');
+            if (dropdown) {
+                var toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) toggle.classList.add('active');
             }
         }
     }
 
     /**
-     * Activate a nav link and its parent dropdown
+     * Resolve a relative URL to absolute
      */
-    function activateLink(link) {
-        link.classList.add('active');
+    function resolveUrl(base, relative) {
+        var combined = base + relative.replace(/%ROOT%/g, '');
+        var parts = combined.split('/');
+        var result = [];
 
-        var dropdown = link.closest('.nav-dropdown');
-        if (dropdown) {
-            var toggle = dropdown.querySelector('.dropdown-toggle');
-            if (toggle) {
-                toggle.classList.add('active');
+        for (var i = 0; i < parts.length; i++) {
+            if (parts[i] === '..') {
+                result.pop();
+            } else if (parts[i] !== '.' && parts[i] !== '') {
+                result.push(parts[i]);
             }
         }
+
+        return '/' + result.join('/');
     }
 
     /**
-     * Resolve a relative path to an absolute path
-     */
-    function resolvePath(basePath, relativePath) {
-        // Remove %ROOT% placeholder if present
-        var cleanRelative = relativePath.replace(/%ROOT%/g, '');
-
-        // If it starts with ../ or ./, resolve relative to rootPath
-        if (cleanRelative.indexOf('../') === 0 || cleanRelative.indexOf('./') === 0) {
-            var combined = basePath + cleanRelative;
-            // Normalize path
-            var parts = combined.split('/');
-            var result = [];
-
-            for (var i = 0; i < parts.length; i++) {
-                if (parts[i] === '..') {
-                    result.pop();
-                } else if (parts[i] !== '.' && parts[i] !== '') {
-                    result.push(parts[i]);
-                }
-            }
-
-            return '/' + result.join('/');
-        }
-
-        return cleanRelative;
-    }
-
-    /**
-     * Initialize mobile hamburger menu
+     * Mobile hamburger menu
      */
     function initMobileMenu() {
         var hamburger = document.querySelector('.hamburger');
@@ -257,7 +205,7 @@
     }
 
     /**
-     * Initialize dropdown toggles for mobile
+     * Mobile dropdown toggles
      */
     function initDropdowns() {
         document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
@@ -271,7 +219,7 @@
     }
 
     /**
-     * Initialize dark/light theme
+     * Dark/light theme
      */
     function initTheme() {
         var html = document.documentElement;
@@ -301,37 +249,30 @@
     }
 
     /**
-     * Initialize reading progress bar
+     * Reading progress bar
      */
-    function initReadingProgress() {
+    function initProgressBar() {
         window.addEventListener('scroll', function () {
-            var progressBar = document.getElementById('reading-progress');
+            var bar = document.getElementById('reading-progress');
+            if (!bar) return;
 
-            if (progressBar) {
-                var windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-                if (windowHeight > 0) {
-                    var scrolled = (window.scrollY / windowHeight) * 100;
-                    progressBar.style.width = Math.min(scrolled, 100) + '%';
-                }
+            var total = document.documentElement.scrollHeight - window.innerHeight;
+            if (total > 0) {
+                bar.style.width = Math.min((window.scrollY / total) * 100, 100) + '%';
             }
         });
     }
 
     /**
-     * Wait for DOM to be ready, then load components
+     * Start loading when DOM is ready
      */
     function init() {
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function () {
-                Promise.all([loadHeader(), loadFooter()]).then(function () {
-                    console.log('Loader: All components loaded');
-                });
+                Promise.all([loadHeader(), loadFooter()]);
             });
         } else {
-            Promise.all([loadHeader(), loadFooter()]).then(function () {
-                console.log('Loader: All components loaded');
-            });
+            Promise.all([loadHeader(), loadFooter()]);
         }
     }
 
