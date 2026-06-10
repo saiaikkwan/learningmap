@@ -3,18 +3,25 @@
     <div id="reading-progress" class="progress-bar-fill" style="width: 0%; height: 100%; border-radius: 0;"></div>
 </div>
 
-<!-- Main Navbar -->
+<!-- Main Navigation -->
 <nav class="navbar">
     <div class="nav-container">
         <a href="%ROOT%index.html" class="logo">
             <i class="fas fa-shield-alt"></i>
             <span>Learning Map</span>
         </a>
+
         <ul class="nav-menu" id="main-nav-menu">
-            <li><a href="%ROOT%index.html" data-page="home">Home</a></li>
-            
+            <!-- Home -->
+            <li>
+                <a href="%ROOT%index.html" data-page="home">Home</a>
+            </li>
+
+            <!-- Web Development -->
             <li class="nav-dropdown">
-                <a href="#" class="dropdown-toggle" data-track="web-dev">Web Dev <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle" data-track="web-dev">
+                    Web Dev <i class="fas fa-chevron-down"></i>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="%ROOT%web-development/" data-page="web-overview">Overview</a></li>
                     <li><a href="%ROOT%web-development/frontend.html" data-page="web-frontend">Frontend</a></li>
@@ -22,9 +29,12 @@
                     <li><a href="%ROOT%web-development/quiz.html" data-page="web-quiz">Quiz</a></li>
                 </ul>
             </li>
-            
+
+            <!-- Cybersecurity -->
             <li class="nav-dropdown">
-                <a href="#" class="dropdown-toggle" data-track="cybersecurity">Cybersecurity <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle" data-track="cybersecurity">
+                    Cybersecurity <i class="fas fa-chevron-down"></i>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="%ROOT%cybersecurity/" data-page="sec-overview">Overview</a></li>
                     <li><a href="%ROOT%cybersecurity/fundamentals.html" data-page="sec-fundamentals">Fundamentals</a></li>
@@ -32,9 +42,12 @@
                     <li><a href="%ROOT%cybersecurity/quiz.html" data-page="sec-quiz">Quiz</a></li>
                 </ul>
             </li>
-            
+
+            <!-- Networking -->
             <li class="nav-dropdown">
-                <a href="#" class="dropdown-toggle" data-track="networking">Networking <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle" data-track="networking">
+                    Networking <i class="fas fa-chevron-down"></i>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="%ROOT%networking/" data-page="net-overview">Overview</a></li>
                     <li><a href="%ROOT%networking/fundamentals.html" data-page="net-fundamentals">Fundamentals</a></li>
@@ -42,9 +55,12 @@
                     <li><a href="%ROOT%networking/quiz.html" data-page="net-quiz">Quiz</a></li>
                 </ul>
             </li>
-            
+
+            <!-- Ethical Hacking -->
             <li class="nav-dropdown">
-                <a href="#" class="dropdown-toggle" data-track="ethical-hacking">Ethical Hacking <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle" data-track="ethical-hacking">
+                    Ethical Hacking <i class="fas fa-chevron-down"></i>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="%ROOT%ethical-hacking/" data-page="hack-overview">Overview</a></li>
                     <li><a href="%ROOT%ethical-hacking/platforms.html" data-page="hack-platforms">Platforms</a></li>
@@ -52,17 +68,23 @@
                     <li><a href="%ROOT%ethical-hacking/quiz.html" data-page="hack-quiz">Quiz</a></li>
                 </ul>
             </li>
-            
+
+            <!-- Resources -->
             <li class="nav-dropdown">
-                <a href="#" class="dropdown-toggle" data-track="resources">Resources <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle" data-track="resources">
+                    Resources <i class="fas fa-chevron-down"></i>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="%ROOT%resources/" data-page="resources-all">All Resources</a></li>
                     <li><a href="%ROOT%resources/comparison.html" data-page="resources-compare">Comparison</a></li>
                 </ul>
             </li>
-            
+
+            <!-- Tools -->
             <li class="nav-dropdown">
-                <a href="#" class="dropdown-toggle" data-track="tools">Tools <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle" data-track="tools">
+                    Tools <i class="fas fa-chevron-down"></i>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="%ROOT%tools/" data-page="tools-overview">Overview</a></li>
                     <li><a href="%ROOT%tools/password-checker.html" data-page="tools-password">Password Checker</a></li>
@@ -70,14 +92,21 @@
                     <li><a href="%ROOT%tools/phishing-quiz.html" data-page="tools-phishing">Phishing Quiz</a></li>
                 </ul>
             </li>
-            
-            <li><a href="%ROOT%my-journey.html" data-page="journey">My Journey</a></li>
+
+            <!-- My Journey -->
+            <li>
+                <a href="%ROOT%my-journey.html" data-page="journey">My Journey</a>
+            </li>
         </ul>
+
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
             <i class="fas fa-moon" id="theme-icon"></i>
         </button>
+
         <button class="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </div>
 </nav>
