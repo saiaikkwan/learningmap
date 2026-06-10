@@ -15,15 +15,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Web Dev <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../web-development/">Overview</a></li><li><a href="../web-development/frontend.html">Frontend</a></li><li><a href="../web-development/backend.html">Backend</a></li><li><a href="../web-development/quiz.html">Quiz</a></li></ul></li>
                 <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Cybersecurity <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../cybersecurity/">Overview</a></li><li><a href="../cybersecurity/fundamentals.html">Fundamentals</a></li><li><a href="../cybersecurity/network-security.html">Network Security</a></li><li><a href="../cybersecurity/quiz.html">Quiz</a></li></ul></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Networking <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../networking/">Overview</a></li>
-                        <li><a href="../networking/fundamentals.html">Fundamentals</a></li>
-                        <li><a href="../networking/cisco.html">Cisco Track</a></li>
-                        <li><a href="../networking/quiz.html">Quiz</a></li>
-                    </ul>
-                </li>
+                <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Networking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../networking/">Overview</a></li><li><a href="../networking/fundamentals.html">Fundamentals</a></li><li><a href="../networking/cisco.html">Cisco Track</a></li><li><a href="../networking/quiz.html">Quiz</a></li></ul></li>
                 <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Ethical Hacking <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../ethical-hacking/">Overview</a></li><li><a href="../ethical-hacking/platforms.html">Platforms</a></li><li><a href="../ethical-hacking/tools.html">Tools</a></li><li><a href="../ethical-hacking/quiz.html">Quiz</a></li></ul></li>
                 <li class="nav-dropdown"><a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="../resources/">All Resources</a></li><li><a href="../resources/comparison.html">Comparison</a></li></ul></li>
                 <li class="nav-dropdown"><a href="#" class="dropdown-toggle active">Tools <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="password-checker.html">Password Checker</a></li><li><a href="cipher-lab.html">Cipher Lab</a></li><li><a href="phishing-quiz.html">Phishing Quiz</a></li></ul></li>
@@ -35,7 +27,7 @@
     </nav>
 
     <header class="hero">
-        <h1>📧 Phishing <span class="highlight">Email Quiz</span></h1>
+        <h1><i class="fas fa-envelope"></i> Phishing <span class="highlight">Email Quiz</span></h1>
         <p>Can you tell legitimate from phishing emails?</p>
     </header>
 
@@ -65,10 +57,10 @@
     <script src="../js/main.js"></script>
     <script>
         const emails = [
-            { subject: 'Your account has been compromised', from: 'security@paypa1.com', body: '<p>Dear Customer,</p><p>We have detected unusual activity. <a href="#" class="email-link">Click here to verify</a> immediately or your account will be suspended.</p>', isPhishing: true, explanation: 'Domain "paypa1.com" uses a number 1 instead of L. Legitimate companies never threaten immediate suspension.' },
-            { subject: 'Your monthly statement is ready', from: 'noreply@chase.com', body: '<p>Hi John,</p><p>Your statement for March 2024 is available. View it by logging into the Chase app or at chase.com.</p>', isPhishing: false, explanation: 'No direct links, no urgency, directs to official app or typing the URL yourself.' },
+            { subject: 'Your account has been compromised', from: 'security@paypa1.com', body: '<p>Dear Customer,</p><p>We have detected unusual activity. <a href="#" class="email-link">Click here to verify</a> immediately or your account will be suspended.</p>', isPhishing: true, explanation: 'Domain "paypa1.com" uses number 1 instead of L. Legitimate companies never threaten immediate suspension.' },
+            { subject: 'Your monthly statement is ready', from: 'noreply@chase.com', body: '<p>Hi,</p><p>Your statement for March 2024 is available. View it by logging into the Chase app or at chase.com.</p>', isPhishing: false, explanation: 'No direct links, no urgency, directs to official app or typing the URL yourself.' },
             { subject: 'You won a free iPhone 15!', from: 'prizes@winning-notifications.xyz', body: '<p>CONGRATULATIONS!</p><p>Claim your iPhone 15 by <a href="#" class="email-link">clicking here</a>. Hurry! Offer expires in 2 hours!</p>', isPhishing: true, explanation: 'Too good to be true. .xyz domain, extreme urgency, request for personal info.' },
-            { subject: 'Your Google sign-in alert', from: 'no-reply@accounts.google.com', body: '<p>Your Google Account was signed in to from a new Windows device. If this was you, ignore this. If not, <a href="#" class="email-link">review your account activity</a>.</p>', isPhishing: false, explanation: 'Typical legitimate security alert. Informs without panicking. Correct google.com domain.' }
+            { subject: 'Your Google sign-in alert', from: 'no-reply@accounts.google.com', body: '<p>Your Google Account was signed in to from a new Windows device. If this was you, ignore. If not, <a href="#" class="email-link">review account activity</a>.</p>', isPhishing: false, explanation: 'Typical legitimate security alert. Informs without panicking. Correct google.com domain.' }
         ];
         let cur = 0, score = 0, answered = false;
         const subEl = document.getElementById('email-subject'), fromEl = document.getElementById('email-from'), bodyEl = document.getElementById('email-body'), fbEl = document.getElementById('phish-feedback'), scoreEl = document.getElementById('phish-score'), totalEl = document.getElementById('phish-total'), nextBtn = document.getElementById('next-email-btn'), legitBtn = document.getElementById('legit-btn'), phishBtn = document.getElementById('phish-btn');

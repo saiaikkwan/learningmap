@@ -33,7 +33,7 @@
 
     <div class="page-with-sidebar" style="padding-top: 80px;">
         <aside class="sidebar">
-            <p class="sidebar-title">📡 Networking</p>
+            <p class="sidebar-title"><i class="fas fa-network-wired"></i> Networking</p>
             <ul class="sidebar-menu">
                 <li><a href="index.html">Overview</a></li>
                 <li><a href="fundamentals.html" class="active">Fundamentals</a></li>
@@ -41,47 +41,20 @@
                 <li><a href="quiz.html">Take Quiz</a></li>
             </ul>
         </aside>
-
         <main class="content-area">
             <header class="hero">
-                <h1>🌍 <span class="highlight">Fundamentals</span></h1>
+                <h1><i class="fas fa-globe-americas"></i> <span class="highlight">Fundamentals</span></h1>
                 <p>The core concepts every IT professional must know.</p>
             </header>
-
             <h2>Key Concepts</h2>
             <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🏗️</div>
-                    <h3>OSI Model</h3>
-                    <p><strong>7 layers:</strong> Physical → Data Link → Network → Transport → Session → Presentation → Application. Memorize: "Please Do Not Throw Sausage Pizza Away"</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📦</div>
-                    <h3>TCP/IP Model</h3>
-                    <p><strong>4 layers:</strong> Network Access → Internet → Transport → Application. The practical model the internet actually uses.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔢</div>
-                    <h3>Subnetting</h3>
-                    <p>Dividing networks into smaller segments. CIDR notation, subnet masks, and IP addressing. The hardest topic for beginners — but essential.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔄</div>
-                    <h3>Routing & Switching</h3>
-                    <p><strong>Switches</strong> forward within a network. <strong>Routers</strong> forward between networks. VLANs, STP, OSPF, BGP — the protocols that move data.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔌</div>
-                    <h3>Common Protocols</h3>
-                    <p>HTTP(80), HTTPS(443), DNS(53), DHCP(67/68), SSH(22), FTP(21), SMTP(25), ARP, ICMP — know the ports and purposes.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Network Security Basics</h3>
-                    <p>Firewalls, ACLs, VLAN segmentation, port security, 802.1X authentication — security starts at the network layer.</p>
-                </div>
+                <div class="card"><div class="card-icon"><i class="fas fa-project-diagram"></i></div><h3>OSI Model</h3><p>7 layers: Physical → Data Link → Network → Transport → Session → Presentation → Application. "Please Do Not Throw Sausage Pizza Away"</p></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-box"></i></div><h3>TCP/IP Model</h3><p>4 layers: Network Access → Internet → Transport → Application. The practical model the internet uses.</p></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-calculator"></i></div><h3>Subnetting</h3><p>CIDR notation, subnet masks, IP addressing. The hardest topic for beginners — but essential.</p></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-sync-alt"></i></div><h3>Routing & Switching</h3><p>Switches forward within networks. Routers forward between networks. VLANs, STP, OSPF, BGP.</p></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-plug"></i></div><h3>Common Protocols</h3><p>HTTP(80), HTTPS(443), DNS(53), DHCP(67/68), SSH(22), FTP(21), SMTP(25) — know the ports.</p></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>Network Security Basics</h3><p>Firewalls, ACLs, VLAN segmentation, port security, 802.1X — security starts at the network layer.</p></div>
             </div>
-
             <h2 class="mt-2">Curated Resources</h2>
             <div id="resources-container"></div>
         </main>
@@ -101,10 +74,7 @@
                     <div class="resource-card">
                         <div class="resource-header"><h3>${r.name}</h3><span class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</span></div>
                         <div class="resource-meta">
-                            <span><i class="fas fa-tag"></i> ${r.type}</span>
-                            <span><i class="fas fa-dollar-sign"></i> ${r.cost}</span>
-                            <span><i class="fas fa-signal"></i> ${r.level}</span>
-                            <span><i class="fas fa-clock"></i> ${r.timeEstimate}</span>
+                            <span><i class="fas fa-tag"></i> ${r.type}</span><span><i class="fas fa-dollar-sign"></i> ${r.cost}</span><span><i class="fas fa-signal"></i> ${r.level}</span><span><i class="fas fa-clock"></i> ${r.timeEstimate}</span>
                         </div>
                         <div class="resource-note">"${r.note}"</div>
                         <div class="card-tags">${r.topics.map(t => `<span class="tag tag-beginner">${t}</span>`).join('')}</div>

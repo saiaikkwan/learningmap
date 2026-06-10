@@ -1,7 +1,8 @@
 class QuizEngine {
-    constructor(containerId, questions) {
+    constructor(containerId, questions, trackName = 'general') {
         this.container = document.getElementById(containerId);
         this.questions = questions;
+        this.trackName = trackName;  // NEW: explicit track name
         this.currentQuestion = 0;
         this.score = 0;
         this.answers = [];
@@ -61,7 +62,6 @@ class QuizEngine {
             isCorrect
         });
 
-        // Highlight answers
         const options = this.container.querySelectorAll('.quiz-option');
         options.forEach((opt, i) => {
             opt.disabled = true;
@@ -69,14 +69,12 @@ class QuizEngine {
             if (i === index && !isCorrect) opt.classList.add('wrong');
         });
 
-        // Show feedback
         const feedback = this.container.querySelector('.quiz-feedback');
         feedback.classList.remove('hidden');
         feedback.innerHTML = isCorrect 
             ? `<p style="color: var(--success);">✅ Correct! ${q.explanation || ''}</p>`
             : `<p style="color: var(--danger);">❌ Incorrect. The correct answer is: ${q.options[q.correct]}. ${q.explanation || ''}</p>`;
 
-        // Next button
         const nextBtn = document.createElement('button');
         nextBtn.className = 'btn btn-primary mt-1';
         nextBtn.textContent = this.currentQuestion < this.questions.length - 1 ? 'Next →' : 'See Results';
@@ -100,7 +98,6 @@ class QuizEngine {
         else if (percentage >= 50) { grade = 'Not Bad'; emoji = '📚'; message = 'Review the resources and try again!'; }
         else { grade = 'Keep Learning'; emoji = '💪'; message = 'Everyone starts somewhere. Review and retry!'; }
 
-        // Save progress
         this.saveProgress(percentage);
 
         this.container.innerHTML = `
@@ -119,28 +116,14 @@ class QuizEngine {
     }
 
     saveProgress(percentage) {
-        const track = window.location.pathname.split('/').filter(Boolean).pop().replace('.html', '') || 'general';
+        // Use the explicit track name instead of URL path
         const progress = JSON.parse(localStorage.getItem('learningmap_progress') || '{}');
-        progress[track] = {
+        progress[this.trackName] = {
             score: this.score,
             total: this.questions.length,
             percentage,
             date: new Date().toISOString()
         };
         localStorage.setItem('learningmap_progress', JSON.stringify(progress));
-    }
-}
-
-// ===== Load Quiz Data =====
-async function loadQuiz(containerId, quizFile) {
-    try {
-        const response = await fetch(`../../data/${quizFile}`);
-        const data = await response.json();
-        const quiz = new QuizEngine(containerId, data.questions);
-        quiz.start();
-    } catch (error) {
-        console.error('Failed to load quiz:', error);
-        document.getElementById(containerId).innerHTML = 
-            '<p style="text-align:center; color: var(--danger);">Failed to load quiz. Please try again.</p>';
     }
 }

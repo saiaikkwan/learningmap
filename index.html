@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Map - Sai Aik Kwan</title>
-    <meta name="description" content="My curated learning journey across Web Development, Cybersecurity, and Ethical Hacking. Resources, notes, and honest reviews.">
+    <meta name="description" content="My curated learning journey across Web Development, Cybersecurity, Ethical Hacking, and Networking. Resources, notes, and honest reviews.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -13,7 +13,6 @@
         <div id="reading-progress" class="progress-bar-fill" style="width: 0%; height: 100%; border-radius: 0;"></div>
     </div>
 
-    <!-- Main Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">
@@ -84,10 +83,9 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <header class="hero">
         <h1>My <span class="highlight">Learning Map</span></h1>
-        <p>Not another course platform — just my personal curated journey through web development, cybersecurity, and ethical hacking. Everything here is something I've used, reviewed, or plan to explore.</p>
+        <p>Not another course platform — just my personal curated journey through web development, cybersecurity, ethical hacking, and networking. Everything here is something I've used, reviewed, or plan to explore.</p>
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number" id="resources-count">0</div>
@@ -104,34 +102,37 @@
         </div>
     </header>
 
-    <!-- Cross-Skill Connection -->
     <section class="container">
         <div class="cross-skill">
             <h2>How These Skills <span class="highlight">Connect</span></h2>
-            <p class="text-center mb-2" style="color: var(--text-light);">These three domains aren't separate — they reinforce each other.</p>
+            <p class="text-center mb-2" style="color: var(--text-light);">These domains aren't separate — they reinforce each other.</p>
             <div class="cross-skill-diagram">
                 <div class="skill-node">
-                    <i class="fas fa-code" style="color: var(--primary); font-size: 2rem;"></i>
+                    <i class="fas fa-code"></i>
                     <p>Web Development</p>
                 </div>
                 <div class="skill-connector">Secure Coding →</div>
                 <div class="skill-node">
-                    <i class="fas fa-shield-alt" style="color: var(--primary); font-size: 2rem;"></i>
+                    <i class="fas fa-shield-alt"></i>
                     <p>Cybersecurity</p>
                 </div>
-                <div class="skill-connector">Offensive Mindset →</div>
+                <div class="skill-connector">Network Layer →</div>
                 <div class="skill-node">
-                    <i class="fas fa-user-secret" style="color: var(--primary); font-size: 2rem;"></i>
+                    <i class="fas fa-network-wired"></i>
+                    <p>Networking</p>
+                </div>
+                <div class="skill-connector">Offensive →</div>
+                <div class="skill-node">
+                    <i class="fas fa-user-secret"></i>
                     <p>Ethical Hacking</p>
                 </div>
             </div>
             <p class="text-center mt-2" style="color: var(--text-light);">
-                <strong>Web Dev</strong> teaches me how to build. <strong>Cybersecurity</strong> teaches me how to protect. <strong>Ethical Hacking</strong> teaches me how to break — so I can build better defenses.
+                <strong>Web Dev</strong> builds it. <strong>Cybersecurity</strong> protects it. <strong>Networking</strong> connects it. <strong>Ethical Hacking</strong> breaks it — so you can build better defenses.
             </p>
         </div>
     </section>
 
-    <!-- Track Cards -->
     <section class="container">
         <div class="section-header">
             <h2>Explore by <span class="highlight">Track</span></h2>
@@ -139,7 +140,7 @@
         </div>
         <div class="cards-grid three-col">
             <div class="card">
-                <div class="card-icon">🌐</div>
+                <div class="card-icon"><i class="fas fa-code"></i></div>
                 <h3>Web Development</h3>
                 <p>Frontend, backend, and full-stack resources that I've used to build real projects.</p>
                 <div class="card-tags">
@@ -152,7 +153,7 @@
                 <a href="web-development/" class="btn btn-outline btn-sm">Explore Track →</a>
             </div>
             <div class="card">
-                <div class="card-icon">🔒</div>
+                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Cybersecurity</h3>
                 <p>Understanding threats, defense strategies, and security fundamentals.</p>
                 <div class="card-tags">
@@ -165,7 +166,20 @@
                 <a href="cybersecurity/" class="btn btn-outline btn-sm">Explore Track →</a>
             </div>
             <div class="card">
-                <div class="card-icon">🎯</div>
+                <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Networking</h3>
+                <p>OSI model, TCP/IP, subnetting, Cisco CCNA — the backbone of everything digital.</p>
+                <div class="card-tags">
+                    <span class="tag tag-beginner">Beginner</span>
+                    <span class="tag tag-intermediate">Intermediate</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="networking-progress" style="width: 0%;"></div>
+                </div>
+                <a href="networking/" class="btn btn-outline btn-sm">Explore Track →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-user-secret"></i></div>
                 <h3>Ethical Hacking</h3>
                 <p>Platforms, tools, and methodologies for penetration testing and red teaming.</p>
                 <div class="card-tags">
@@ -180,23 +194,22 @@
         </div>
     </section>
 
-    <!-- Quick Links -->
     <section class="container">
         <div class="cards-grid three-col" style="padding-top: 0;">
             <div class="card">
-                <div class="card-icon">📊</div>
+                <div class="card-icon"><i class="fas fa-table"></i></div>
                 <h3>Resource Comparison</h3>
                 <p>Side-by-side comparison of learning platforms I've used.</p>
                 <a href="resources/comparison.html" class="btn btn-outline btn-sm">Compare →</a>
             </div>
             <div class="card">
-                <div class="card-icon">🛠️</div>
+                <div class="card-icon"><i class="fas fa-tools"></i></div>
                 <h3>Interactive Tools</h3>
                 <p>Password checker, cipher lab, and phishing quiz.</p>
                 <a href="tools/" class="btn btn-outline btn-sm">Try Tools →</a>
             </div>
             <div class="card">
-                <div class="card-icon">🗺️</div>
+                <div class="card-icon"><i class="fas fa-map"></i></div>
                 <h3>My Journey</h3>
                 <p>Timeline of what I learned and when.</p>
                 <a href="my-journey.html" class="btn btn-outline btn-sm">View Timeline →</a>
@@ -204,7 +217,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -216,6 +228,7 @@
                 <ul>
                     <li><a href="web-development/">Web Development</a></li>
                     <li><a href="cybersecurity/">Cybersecurity</a></li>
+                    <li><a href="networking/">Networking</a></li>
                     <li><a href="ethical-hacking/">Ethical Hacking</a></li>
                 </ul>
             </div>
@@ -235,39 +248,46 @@
 
     <script src="js/main.js"></script>
     <script src="js/progress.js"></script>
-    <script>
-        fetch('data/resources.json')
-            .then(res => res.json())
-            .then(data => {
-                let total = 0;
-                let completed = 0;
-                
-                function countResources(obj) {
-                    if (Array.isArray(obj)) {
-                        obj.forEach(item => {
-                            total++;
-                            if (item.status === 'completed') completed++;
-                        });
-                    } else {
-                        Object.values(obj).forEach(countResources);
-                    }
+    <script src="js/progress.js"></script>
+<script>
+    // Load stats
+    fetch('data/resources.json')
+        .then(res => res.json())
+        .then(data => {
+            let total = 0;
+            let completed = 0;
+            function countResources(obj) {
+                if (Array.isArray(obj)) {
+                    obj.forEach(item => { total++; if (item.status === 'completed') completed++; });
+                } else {
+                    Object.values(obj).forEach(countResources);
                 }
-                
-                countResources(data);
-                document.getElementById('resources-count').textContent = total;
-                document.getElementById('completed-count').textContent = completed;
-                
-                const progress = JSON.parse(localStorage.getItem('learningmap_progress') || '{}');
-                if (progress['web-development']) {
-                    document.getElementById('web-dev-progress').style.width = progress['web-development'].percentage + '%';
-                }
-                if (progress['cybersecurity']) {
-                    document.getElementById('cybersec-progress').style.width = progress['cybersecurity'].percentage + '%';
-                }
-                if (progress['ethical-hacking']) {
-                    document.getElementById('hacking-progress').style.width = progress['ethical-hacking'].percentage + '%';
+            }
+            countResources(data);
+            document.getElementById('resources-count').textContent = total;
+            document.getElementById('completed-count').textContent = completed;
+        });
+
+    // Load progress bars (runs after header is loaded)
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const progress = JSON.parse(localStorage.getItem('learningmap_progress') || '{}');
+            
+            const bars = {
+                'web-development': 'web-dev-progress',
+                'cybersecurity': 'cybersec-progress',
+                'networking': 'networking-progress',
+                'ethical-hacking': 'hacking-progress'
+            };
+            
+            Object.entries(bars).forEach(([key, id]) => {
+                const bar = document.getElementById(id);
+                if (bar && progress[key]) {
+                    bar.style.width = progress[key].percentage + '%';
                 }
             });
-    </script>
+        }, 300); // Small delay to ensure header is loaded
+    });
+</script>
 </body>
 </html>
